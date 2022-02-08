@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 // import components
 import TypingBox from "../components/typingBox";
 import PokedexCardCont from "../components/pokedexCardCont";

@@ -1,5 +1,6 @@
-.inline {
-  display: inline-block;
+.pokedex-card-container {
+  max-width: 300px;
+  max-height: 200px;
 }
 
 .pokedex-card-cont {
@@ -13,7 +14,7 @@
 }
 
 .pokedex-card-cont > h1 {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .pokedex-card-image {
