@@ -1,12 +1,15 @@
 .pokedex-card-container {
-  max-width: 300px;
-  max-height: 200px;
+  width: 300px;
+  height: 202px;
+  margin: 10px 10px;
+  overflow: hidden;
 }
 
 .pokedex-card-cont {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: flex-start;
+  min-height: 202px;
   background-color: #71d888;
   color: #ffffff;
   border-radius: 30px;
@@ -14,6 +17,7 @@
 }
 
 .pokedex-card-cont > h1 {
+  width: 300px;
   margin-bottom: 5px;
 }
 

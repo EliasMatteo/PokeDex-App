@@ -1,5 +1,5 @@
-const TypingBox = ({ text }) => {
-  return <div className="typing-box">{text}</div>;
+const TypingBox = ({ type }) => {
+  return <div className="typing-box">{type}</div>;
 };
 
 export default TypingBox;
