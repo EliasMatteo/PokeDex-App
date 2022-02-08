@@ -1,0 +1,30 @@
+.inline {
+  display: inline-block;
+}
+
+.pokedex-card-cont {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  background-color: #71d888;
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 0 120px 20px 20px;
+}
+
+.pokedex-card-cont > h1 {
+    margin-bottom: 5px;
+}
+
+.pokedex-card-image {
+  position: relative;
+  z-index: 1;
+  left: 180px;
+  bottom: 110px;
+}
+
+.pokedex-card-bg {
+  position: relative;
+  left: 150px;
+  bottom: 250px;
+}
