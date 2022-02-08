@@ -3,13 +3,14 @@ import Image from "next/image";
 // import component
 import TypingBox from "./typingBox";
 
-const PokedexCardCont = ({ header }) => {
+const PokedexCardCont = ({ pokemonname, type1, type2 }) => {
   return (
     <div className="pokedex-card-container">
       <div className="pokedex-card-cont">
-        <h1>{header}</h1>
-        <TypingBox text="Grass" />
-        <TypingBox text="Poison" />
+        <h1>{pokemonname}</h1>
+        <TypingBox type={type1} />
+        {/* if type 2 doesn't exist, don't show */}
+        {type2 == "" ? null : <TypingBox type={type2} />}
       </div>
       <div className="pokedex-card-image">
         <Image src="/bulbasaur.png" alt="bulbasaur" width={100} height={100} />
