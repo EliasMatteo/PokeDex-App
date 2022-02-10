@@ -1,4 +1,4 @@
-const statValue = ({category, value}) => {
+const StatValue = ({category, value}) => {
     return (
       <div className="stat-value">
           <p>{category}</p>
@@ -7,5 +7,5 @@ const statValue = ({category, value}) => {
     );
   };
   
-  export default statValue;
+  export default StatValue;
   

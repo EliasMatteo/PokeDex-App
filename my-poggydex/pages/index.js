@@ -4,6 +4,8 @@ import Image from "next/image";
 
 // import components
 import PokedexCardCont from "../components/pokedexCardCont";
+import StatValue from '../components/statValue';
+import InfoTab from '../components/infoTab';
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -63,6 +65,12 @@ export default function Home() {
               />
             </div>
           ))}
+      </div>
+      <StatValue category={"Generation"} value={"Seed"}></StatValue>
+      <div className="info-tab-cont">
+      <InfoTab name={"About"}></InfoTab>
+      <InfoTab name={"About"}></InfoTab>
+      <InfoTab name={"About"}></InfoTab>
       </div>
     </div>
   );
