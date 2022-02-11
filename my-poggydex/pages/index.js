@@ -3,6 +3,7 @@ import axios from "axios";
 import Image from "next/image";
 
 // import components
+import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
 
 export default function Home() {
@@ -30,27 +31,12 @@ export default function Home() {
 
     if (isSearching) return () => (cancelSetPokemons = true);
   }, [isSearching, setIsSearching, name]);
-
   return (
     <div>
-      <div className="search-bar">
-        <input
-          className="searh-bar-text-box"
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Pokemon Name"
-        />
-        <button
-          className="search-bar-button"
-          onClick={() => setIsSearching(true)}
-        >
-          <Image
-            src={"/icon/search.svg"}
-            alt="search icon"
-            width={20}
-            height={20}
-          />
-        </button>
-      </div>
+      <SearchBar
+        changePokemon={(e) => setName(e.target.value)}
+        clickPokemon={() => setIsSearching(true)}
+      />
       {/* data mapping */}
       <div className="index-pokedex-card-display">
         {pokemons.length > 0 &&
