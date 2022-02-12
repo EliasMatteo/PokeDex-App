@@ -1,11 +1,9 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import 'react-tabs/style/react-tabs.css';
-import styles from '../styles/components/infoTab';
 
 const InfoTab = ({}) =>(
-  <div className="info-tabs">
-  <Tabs>
-    <TabList>
+  <Tabs className="info-tabs">
+    <TabList className="tab-list">
       <Tab>About</Tab>
       <Tab>Base Stats</Tab>
       <Tab>Evolution</Tab>
@@ -21,7 +19,6 @@ const InfoTab = ({}) =>(
       <p>Ravioli</p>
     </TabPanel>
   </Tabs>
-  </div>
 );
 
 export default InfoTab;
