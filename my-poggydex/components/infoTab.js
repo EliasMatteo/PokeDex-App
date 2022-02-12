@@ -1,10 +1,38 @@
-const InfoTab = ({name}) => {
-    return (
-      <button className="info-tab">
-        <h3>{name}</h3>
-      </button>
-    );
-  };
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import 'react-tabs/style/react-tabs.css';
+import styles from '../styles/components/infoTab';
+
+const InfoTab = ({}) =>(
+  <div className="info-tabs">
+  <Tabs>
+    <TabList>
+      <Tab>About</Tab>
+      <Tab>Base Stats</Tab>
+      <Tab>Evolution</Tab>
+    </TabList>
+
+    <TabPanel>
+      <p>Spaghetti</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Fettucini</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Ravioli</p>
+    </TabPanel>
+  </Tabs>
+  </div>
+);
+
+export default InfoTab;
+// const InfoTab = ({name}) => {
+//     return (
+//       <button className="info-tab">
+//         <h3>{name}</h3>
+//       </button>
+//     );
+//   };
   
-  export default InfoTab;
+//   export default InfoTab;
   
+
