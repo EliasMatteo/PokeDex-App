@@ -5,6 +5,7 @@
 // pages
 @import "./index.scss";
 @import "./pokemonEntry.scss";
+@import "./settings.scss";
 
 // components
 @import "./components/typingbox.scss";
@@ -12,6 +13,8 @@
 @import "./components/contextHeader.scss";
 @import "./components/searchBar.scss";
 @import "./components/pokemonEvolution.scss";
+@import "./components/toggleSwitch.scss";
+
 
 html,
 body {
