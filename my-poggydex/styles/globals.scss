@@ -4,12 +4,14 @@
 
 // pages
 @import "./index.scss";
+@import "./pokemonEntry.scss";
 
 // components
 @import "./components/typingbox.scss";
 @import "./components/pokedexCardCont.scss";
 @import "./components/contextHeader.scss";
 @import "./components/searchBar.scss";
+@import "./components/pokemonEvolution.scss";
 
 html,
 body {
