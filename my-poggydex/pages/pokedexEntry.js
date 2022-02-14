@@ -6,6 +6,7 @@ import PokemonEvolution from "../components/pokemonEvolution";
 import ListButton from "../components/listButton";
 import PokemonType from "../components/pokemonType";
 import PokemonGen from "../components/pokemonGen";
+import BaseStats from "../components/baseStats";
 
 export default function pokemonEntry() {
   return (
@@ -17,6 +18,12 @@ export default function pokemonEntry() {
       <ListButton listtext={"Generations"} />
       <PokemonType />
       <PokemonGen />
+      <BaseStats />
+      <BaseStats statname={"Attack"} />
+      <BaseStats statname={"Sp.Attack"} />
+      <BaseStats statname={"Defense"} />
+      <BaseStats statname={"Sp.Defense"} />
+      <BaseStats statname={"Speed"} />
     </div>
   );
 }
