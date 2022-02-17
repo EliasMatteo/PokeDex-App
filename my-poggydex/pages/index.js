@@ -54,9 +54,15 @@ export default function Home() {
       </div>
       <StatValue category={"Generation"} value={"Seed"}></StatValue>
       <div className="info-tab-cont">
-      <InfoTab name={"About"}></InfoTab>
-      <InfoTab name={"About"}></InfoTab>
-      <InfoTab name={"About"}></InfoTab>
+      <InfoTab name={"About"}>
+        <p>111</p>
+      </InfoTab>
+      <InfoTab name={"About"}>
+        <p>222</p>
+      </InfoTab>
+      <InfoTab name={"About"}>
+        <p>333</p>
+      </InfoTab>
       </div>
     </div>
   );
