@@ -19,6 +19,9 @@
 @import "./components/pokemonGen.scss";
 @import "./components/baseStats.scss";
 
+// variables
+@import "./variables/general.scss";
+
 html,
 body {
   padding: 0;

@@ -6,7 +6,6 @@ const ListButton = ({ listtext = "Pokemon Type" }) => {
       <div className="list-button-text-cont">
         <h1 className="list-button-text">{listtext}</h1>
       </div>
-      <div className="list-button-space" />
       <div className="list-button-arrow">
         <Image
           src={"/icon/arrowRight.svg"}
