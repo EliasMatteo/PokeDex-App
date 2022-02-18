@@ -15,7 +15,12 @@ export default function pokemonEntry() {
   return (
     <div className="pokemonEntry-evolution-display">
       <div className="sec1">
-        <h1>Section 1</h1>
+        <div className="pokedex-card-image">
+          <Image src={`/pokemon/abomasnow.png`} alt="abomasnow" width={500} height={500} />
+        </div>
+        <div className="pokedex-card-bg">
+          <Image src="/pokeball.png" alt="pokeball" width={180} height={180} />
+        </div>
       </div>
       <div className="sec2">
         <Tabs>
@@ -23,17 +28,15 @@ export default function pokemonEntry() {
             <Tab>About</Tab>
             <Tab>Base Stats</Tab>
             <Tab>Evolution</Tab>
-            {/* <Tab className="tabs">About</Tab>
-          <Tab className="tabs">Base Stats</Tab>
-          <Tab className="tabs">Evolution</Tab> */}
           </TabList>
 
           <TabPanel>
-            <h2>About tab</h2>
+            <div className="about-sec">
+              <h2>About tab</h2>
+            </div>
           </TabPanel>
 
           <TabPanel>
-            <h2>Base Stats tab</h2>
             <BaseStats />
             <BaseStats statname={"Attack"} />
             <BaseStats statname={"Sp.Attack"} />
@@ -43,7 +46,6 @@ export default function pokemonEntry() {
           </TabPanel>
 
           <TabPanel>
-            <h2>Evolution tab</h2>
             <PokemonEvolution pokemonname="bulbasaur" arrowDisplay="show" />
             <PokemonEvolution pokemonname="ivysaur" arrowDisplay="show" />
             <PokemonEvolution pokemonname="venusaur" arrowDisplay={null} />

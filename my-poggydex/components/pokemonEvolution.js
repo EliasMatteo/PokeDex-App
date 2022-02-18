@@ -8,8 +8,8 @@ const PokemonEvolution = ({ pokemonname = "henry", arrowDisplay = null }) => {
         <div className="evolution-image-icon">
           <Image
             src={`/pokemon/${pokemonname}.png`}
-            width={184}
-            height={184}
+            width={164}
+            height={164}
             alt={pokemonname}
             className="poke-img"
           />

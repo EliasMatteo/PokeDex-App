@@ -16,6 +16,11 @@
     padding: 40px;
 }
 
+.tabs-cont {
+    display: flex;
+    width: 500px;
+}
+
 .sec1 {
     display: flex;
     flex: 1;
@@ -24,8 +29,16 @@
 
 .sec2{
     display: flex;
+    align-items: center;
+    padding: 0px;
+    padding-left: 10px;
     flex: 1.5;
     flex-direction: row;
     background-color: #434343;
     border-radius: 25px;
+    border: 1px solid red;
+}
+
+.about-sec {
+    width: 100%;
 }
