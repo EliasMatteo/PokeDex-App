@@ -30,19 +30,29 @@ const PokemonEntry = () => {
     matchPokemon(pokemonName);
   }, [pokemonName]);
 
+  if (pokemon === null) {
+    return <div>loading...</div>;
+  }
+
   return (
     // how to call data
     // <div>{pokemon.name}</div>
     <div className="pokemonEntry-evolution-display">
       <div className="sec1">
+        {/* this is calling data */}
         <div>
-          <ContextHeader />
+          <ContextHeader
+            name={pokemon.name}
+            japanese_name={pokemon.japanese_name}
+            species={pokemon.species}
+            pokedex_number={pokemon.pokedex_number}
+          />
         </div>
 
         <div>
           <Image
-            src={`/pokemon/abomasnow.png`}
-            alt="abomasnow"
+            src={`/pokemon/${pokemon.name}.png`}
+            alt={pokemon.name}
             width={350}
             height={350}
           />
@@ -66,12 +76,13 @@ const PokemonEntry = () => {
           </TabPanel>
 
           <TabPanel>
-            <BaseStats />
-            <BaseStats statname={"Attack"} />
-            <BaseStats statname={"Sp.Attack"} />
-            <BaseStats statname={"Defense"} />
-            <BaseStats statname={"Sp.Defense"} />
-            <BaseStats statname={"Speed"} />
+            <BaseStats ststname={"HP"} stat={pokemon.hp} />
+            <BaseStats statname={"Attack"} stat={pokemon.attack} />
+            <BaseStats statname={"Sp.Attack"} stat={pokemon.sp_attack} />
+            <BaseStats statname={"Defense"} stat={pokemon.defense} />
+            <BaseStats statname={"Sp.Defense"} stat={pokemon.sp_defense} />
+            <BaseStats statname={"Speed"} stat={pokemon.speed} />
+            {/* missing base_experience & base_friendship */}
           </TabPanel>
 
           <TabPanel>
