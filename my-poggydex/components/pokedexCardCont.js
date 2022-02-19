@@ -13,7 +13,12 @@ const PokedexCardCont = ({ pokemonname, type1, type2 }) => {
         {type2 == "" ? null : <TypingBox type={type2} />}
       </div>
       <div className="pokedex-card-image">
-        <Image src={`/pokemon/${pokemonname}.png`} alt={pokemonname} width={100} height={100} />
+        <Image
+          src={`/pokemon/${pokemonname}.png`}
+          alt={pokemonname}
+          width={100}
+          height={100}
+        />
       </div>
       <div className="pokedex-card-bg">
         <Image src="/pokeball.png" alt="pokeball" width={180} height={180} />
