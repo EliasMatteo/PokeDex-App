@@ -5,6 +5,8 @@ import Image from "next/image";
 // import components
 import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
+import StatValue from '../components/statValue';
+import InfoTab from '../components/infoTab';
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -49,6 +51,18 @@ export default function Home() {
               />
             </div>
           ))}
+      </div>
+      <StatValue category={"Generation"} value={"Seed"}></StatValue>
+      <div className="info-tab-cont">
+      <InfoTab name={"About"}>
+        <p>111</p>
+      </InfoTab>
+      <InfoTab name={"About"}>
+        <p>222</p>
+      </InfoTab>
+      <InfoTab name={"About"}>
+        <p>333</p>
+      </InfoTab>
       </div>
     </div>
   );

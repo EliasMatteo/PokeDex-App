@@ -3,7 +3,7 @@ const ContextHeader = ({}) => {
     <div className="context-header">
       <div className="context-header-title">
         <h1>Bulbasaur</h1>
-        <span>Japanese name</span>
+        <span>フシギダネ</span>
       </div>
       <div>
         <p>Seed Pokemon</p>
