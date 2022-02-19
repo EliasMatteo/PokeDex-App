@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Image from "next/image";
+import Link from "next/link";
 
 // import components
 import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
-import StatValue from '../components/statValue';
-import InfoTab from '../components/infoTab';
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -44,25 +42,17 @@ export default function Home() {
         {pokemons.length > 0 &&
           pokemons.map((pokemon) => (
             <div key={pokemon.name}>
-              <PokedexCardCont
-                pokemonname={pokemon.name}
-                type1={pokemon.type_1}
-                type2={pokemon.type_2}
-              />
+              <Link href={`/pokemon/${pokemon.name}`}>
+                <a>
+                  <PokedexCardCont
+                    pokemonname={pokemon.name}
+                    type1={pokemon.type_1}
+                    type2={pokemon.type_2}
+                  />
+                </a>
+              </Link>
             </div>
           ))}
-      </div>
-      <StatValue category={"Generation"} value={"Seed"}></StatValue>
-      <div className="info-tab-cont">
-      <InfoTab name={"About"}>
-        <p>111</p>
-      </InfoTab>
-      <InfoTab name={"About"}>
-        <p>222</p>
-      </InfoTab>
-      <InfoTab name={"About"}>
-        <p>333</p>
-      </InfoTab>
       </div>
     </div>
   );
