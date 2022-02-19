@@ -25,6 +25,13 @@
     display: flex;
     flex: 1;
     border: 1px solid red;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("../public/pokeball.png");
+    background-size: 350px 350px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .sec2{
@@ -34,9 +41,12 @@
     padding-left: 10px;
     flex: 1.5;
     flex-direction: row;
-    background-color: #434343;
     border-radius: 25px;
-    border: 1px solid red;
+    background-color: #434343;
+    background-image: url("../public/pokeball.png");
+    background-size: 550px 550px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
 
 .about-sec {

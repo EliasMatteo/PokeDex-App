@@ -7,6 +7,7 @@ import ListButton from "../components/listButton";
 import PokemonType from "../components/pokemonType";
 import PokemonGen from "../components/pokemonGen";
 import BaseStats from "../components/baseStats";
+import ContextHeader from "../components/contextHeader";
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -15,12 +16,19 @@ export default function pokemonEntry() {
   return (
     <div className="pokemonEntry-evolution-display">
       <div className="sec1">
-        <div className="pokedex-card-image">
-          <Image src={`/pokemon/abomasnow.png`} alt="abomasnow" width={500} height={500} />
-        </div>
-        <div className="pokedex-card-bg">
-          <Image src="/pokeball.png" alt="pokeball" width={180} height={180} />
-        </div>
+          <div>
+            <ContextHeader />
+          </div>
+
+          <div>
+            <Image src={`/pokemon/abomasnow.png`} alt="abomasnow" width={350} height={350} />
+          </div>
+          
+          <div>
+            Heart Icon
+          </div>
+          {/* <Image src="/pokeball.png" alt="pokeball" width={180} height={180} /> */}
+
       </div>
       <div className="sec2">
         <Tabs>
