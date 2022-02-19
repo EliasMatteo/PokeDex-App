@@ -1,8 +1,9 @@
 import Image from "next/image";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
+//components
 import PokemonEvolution from "../../components/pokemonEvolution";
 import ListButton from "../../components/listButton";
 import PokemonType from "../../components/pokemonType";
@@ -18,6 +19,7 @@ const PokemonEntry = () => {
   const { pokemonName } = router.query;
   const [pokemon, setPokemon] = useState(null);
 
+  // match the pokemon to dynamic prop pokemonName using search api
   useEffect(() => {
     const matchPokemon = async (pokemonName) => {
       const res = await axios.get("/api/pokemon", {
@@ -25,11 +27,14 @@ const PokemonEntry = () => {
           name: pokemonName?.toUpperCase(),
         },
       });
+      // get the first result of the list
       setPokemon(res.data[0]);
     };
     matchPokemon(pokemonName);
   }, [pokemonName]);
 
+  // while searching loading screen
+  // prevents run time error
   if (pokemon === null) {
     return <div>loading...</div>;
   }
@@ -39,7 +44,6 @@ const PokemonEntry = () => {
     // <div>{pokemon.name}</div>
     <div className="pokemonEntry-evolution-display">
       <div className="sec1">
-        {/* this is calling data */}
         <div>
           <ContextHeader
             name={pokemon.name}
@@ -48,7 +52,6 @@ const PokemonEntry = () => {
             pokedex_number={pokemon.pokedex_number}
           />
         </div>
-
         <div>
           <Image
             src={`/pokemon/${pokemon.name}.png`}
