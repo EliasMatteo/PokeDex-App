@@ -7,6 +7,7 @@ import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
 import StatValue from '../components/statValue';
 import InfoTab from '../components/infoTab';
+import FavHeartIcon from "../components/favHeartIcon";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -52,11 +53,13 @@ export default function Home() {
             </div>
           ))}
       </div>
-      <StatValue category={"Generation"} value={"Seed"}></StatValue>
+        <StatValue category={"Generation"} value={"Seed"}></StatValue>
       <div className="info-tab-cont">
-      <InfoTab name={"About"}></InfoTab>
-      <InfoTab name={"About"}></InfoTab>
-      <InfoTab name={"About"}></InfoTab>
+        <InfoTab ></InfoTab>
+
+      </div>
+      <div className="test">
+        <FavHeartIcon/>
       </div>
     </div>
   );
