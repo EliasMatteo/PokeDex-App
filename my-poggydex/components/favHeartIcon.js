@@ -12,8 +12,8 @@ const FavHeartIcon = ({
                 <Image
                     src={"/../public/icon/heart.svg"}
                     alt="favorite"
-                    width={20}
-                    height={20}>
+                    width={60}
+                    height={60}>
                 </Image>
             </div>
         );
@@ -25,8 +25,8 @@ const FavHeartIcon = ({
             <Image
                 src={"/../public/icon/heartfilled.svg"}
                 alt="favorite"
-                width={30}
-                height={30}>
+                width={60}
+                height={60}>
             </Image>
         </div>
         );

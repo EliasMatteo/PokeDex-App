@@ -24,8 +24,6 @@
 .sec1 {
     display: flex;
     flex: 1;
-    border: 1px solid red;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
     background-image: url("../public/pokeball.png");
@@ -51,4 +49,14 @@
 
 .about-sec {
     width: 100%;
+}
+
+.name-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heart-cont {
+    display: flex;
 }

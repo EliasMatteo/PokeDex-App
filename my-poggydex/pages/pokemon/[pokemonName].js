@@ -48,24 +48,28 @@ const PokemonEntry = () => {
     // <div>{pokemon.name}</div>
     <div className="pokemonEntry-evolution-display">
       <div className="sec1">
-        <div>
-          <ContextHeader
-            name={pokemon.name}
-            japanese_name={pokemon.japanese_name}
-            species={pokemon.species}
-            pokedex_number={pokemon.pokedex_number}
-          />
+        <div className="name-img">
+          <div>
+            <ContextHeader
+              name={pokemon.name}
+              japanese_name={pokemon.japanese_name}
+              species={pokemon.species}
+              pokedex_number={pokemon.pokedex_number}
+            />
+          </div>
+          <div>
+            <Image
+              src={`/pokemon/${pokemon.name}.png`}
+              alt={pokemon.name}
+              width={350}
+              height={350}
+            />
+          </div>
         </div>
-        <div>
-          <Image
-            src={`/pokemon/${pokemon.name}.png`}
-            alt={pokemon.name}
-            width={350}
-            height={350}
-          />
+        <div className="heart-cont">
+          <FavHeartIcon />
         </div>
 
-        <FavHeartIcon />
         {/* <Image src="/pokeball.png" alt="pokeball" width={180} height={180} /> */}
       </div>
       <div className="sec2">
