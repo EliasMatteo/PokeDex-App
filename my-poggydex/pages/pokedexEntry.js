@@ -8,6 +8,7 @@ import PokemonType from "../components/pokemonType";
 import PokemonGen from "../components/pokemonGen";
 import BaseStats from "../components/baseStats";
 import ContextHeader from "../components/contextHeader";
+import InfoTab from "../components/infoTab";
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -30,8 +31,11 @@ export default function pokemonEntry() {
           {/* <Image src="/pokeball.png" alt="pokeball" width={180} height={180} /> */}
 
       </div>
-      <div className="sec2">
-        <Tabs>
+      <div>
+        <InfoTab/>
+      </div>
+      {/* <div className="sec2"> */}
+        {/* <Tabs>
           <TabList className="tabs-cont">
             <Tab>About</Tab>
             <Tab>Base Stats</Tab>
@@ -58,9 +62,8 @@ export default function pokemonEntry() {
             <PokemonEvolution pokemonname="ivysaur" arrowDisplay="show" />
             <PokemonEvolution pokemonname="venusaur" arrowDisplay={null} />
           </TabPanel>
-        </Tabs>
-      </div>
-      <hr />
+        </Tabs> */}
+      {/* </div> */}
       {/* <ListButton />
       <ListButton listtext={"Generations"} />
       <PokemonType />
