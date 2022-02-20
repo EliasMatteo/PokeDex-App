@@ -14,6 +14,9 @@ import ContextHeader from "../../components/contextHeader";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
+import InfoTab from "../../components/infoTab";
+import StatValue from "../../components/statValue";
+
 const PokemonEntry = () => {
   const router = useRouter();
   const { pokemonName } = router.query;
@@ -75,6 +78,7 @@ const PokemonEntry = () => {
           <TabPanel>
             <div className="about-sec">
               <h2>About tab</h2>
+              <StatValue category={"Generation"} value={"Seed"}></StatValue>
             </div>
           </TabPanel>
 
