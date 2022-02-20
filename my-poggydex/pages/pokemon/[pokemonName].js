@@ -16,6 +16,7 @@ import "react-tabs/style/react-tabs.css";
 
 import InfoTab from "../../components/infoTab";
 import StatValue from "../../components/statValue";
+import FavHeartIcon from "../../components/favHeartIcon";
 
 const PokemonEntry = () => {
   const router = useRouter();
@@ -64,7 +65,7 @@ const PokemonEntry = () => {
           />
         </div>
 
-        <div>Heart Icon</div>
+        <FavHeartIcon />
         {/* <Image src="/pokeball.png" alt="pokeball" width={180} height={180} /> */}
       </div>
       <div className="sec2">
