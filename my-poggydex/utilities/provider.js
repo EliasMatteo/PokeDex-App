@@ -1,4 +1,4 @@
-import { useContext, createContext, use, useState } from "react";
+import { useContext, createContext, useState } from "react";
 import { themes } from "./variables";
 
 const initalStates = {
