@@ -82,8 +82,24 @@ const PokemonEntry = () => {
 
           <TabPanel>
             <div className="about-sec">
-              <h2>About tab</h2>
-              <StatValue category={"Generation"} value={"Seed"}></StatValue>
+              <div className="left">
+                <h3>About</h3>
+                <StatValue category={"Generation:"} value={pokemon.generation}></StatValue>
+                <StatValue category={"Status:"} value={pokemon.status}></StatValue>
+                <StatValue category={"Species:"} value={pokemon.species}></StatValue>
+                <StatValue category={"Height:"} value={pokemon.height_m}></StatValue>
+                <StatValue category={"Weight:"} value={pokemon.weight_kg}></StatValue>
+                <StatValue category={"Abilities:"} value={pokemon.ability_1}></StatValue>
+              </div>
+              <div className="right">
+              <h3>Training</h3>
+                <StatValue category={"Catch Rate:"} value={pokemon.catch_rate}></StatValue>
+                <StatValue category={"Base Friendship:"} value={pokemon.base_friendship}></StatValue>
+                <StatValue category={"Base Experience:"} value={pokemon.base_experience}></StatValue>
+                <StatValue category={"Growth Rate:"} value={pokemon.growth_rate}></StatValue>
+                <StatValue category={"Egg Type:"} value={pokemon.egg_type_1}></StatValue>
+                <StatValue category={"Egg Cycle:"} value={pokemon.egg_cycles}></StatValue>
+              </div>
             </div>
           </TabPanel>
 
