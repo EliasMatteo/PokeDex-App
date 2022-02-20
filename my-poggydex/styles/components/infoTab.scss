@@ -59,7 +59,7 @@
   -webkit-tap-highlight-color: transparent;
 
   &__tab-list {
-    border-bottom: 1px solid #aaa;
+    // border-bottom: 1px solid #aaa;
     margin: 0 0;
     padding: 0;
     justify-content: space-evenly;
@@ -92,7 +92,7 @@
     }
 
     &--disabled {
-      color: red;
+      color: GrayText;
       cursor: default;
     }
 
@@ -104,7 +104,7 @@
     &--selected {
       display: block;
       width: 1043px;
-      height: 614px;
+      height: 814px;
       background: #434343;
       margin-left: 1px;
       border-radius: 50px 0 0 50px;

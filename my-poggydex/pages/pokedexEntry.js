@@ -11,7 +11,6 @@ import ContextHeader from "../components/contextHeader";
 import InfoTab from "../components/infoTab";
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 
 export default function pokemonEntry() {
   return (
