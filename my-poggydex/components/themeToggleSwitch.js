@@ -1,10 +1,21 @@
 import Image from "next/image";
+import { useTheme } from "../utilities/provider";
 
-const ThemeToggleSwitch = ({ isThemeChecked, handleThemeToggle }) => {
-  console.log(isThemeChecked);
+const ThemeToggleSwitch = ({
+  isThemeChecked,
+  handleThemeToggle,
+  onClick,
+  bg = null,
+}) => {
+  const { theme } = useTheme();
+  const inlineStyle = {};
+  if (bg) {
+    inlineStyle.backgroundColor = bg;
+  }
   return (
-    <div className="switch-cont">
+    <div className={`switch-cont-${theme}`}>
       <input
+        onClick={onClick}
         checked={isThemeChecked}
         onChange={handleThemeToggle}
         type="checkbox"
