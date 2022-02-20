@@ -30,6 +30,7 @@
     background-size: 350px 350px;
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 .sec2{
@@ -42,9 +43,10 @@
     border-radius: 25px;
     background-color: #434343;
     background-image: url("../public/pokeball.png");
-    background-size: 550px 550px;
+    background-size: 700px 700px;
     background-repeat: no-repeat;
-    background-position: right bottom;
+    background-position: 120% 100%;
+    
 }
 
 .img-types-cont {
@@ -94,11 +96,11 @@
     display: flex;
     justify-content: space-between;
     color: white;
-    max-width: 310px;
+    max-width: 350px;
     padding: 10px;
     font-size: 22px;
 }
 
 .stat-value > span{
-font-weight: 500;
+font-weight: 700;
 }
