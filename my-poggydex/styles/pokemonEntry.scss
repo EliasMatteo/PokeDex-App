@@ -47,9 +47,21 @@
     background-position: right bottom;
 }
 
+.img-types-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.types {
+    display: flex;
+    flex-direction: row;
+}
+
 .about-sec {
     display: flex;
     width: 100%;
+    padding: 10px 50px 50px 50px;
 }
 
 .left {
@@ -76,4 +88,16 @@
 
 .heart-cont {
     display: flex;
+}
+
+.stat-value{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    max-width: 310px;
+    padding: 10px;
+}
+
+.stat-value > span{
+font-weight: 500;
 }

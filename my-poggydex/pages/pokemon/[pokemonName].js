@@ -10,6 +10,7 @@ import PokemonType from "../../components/pokemonType";
 import PokemonGen from "../../components/pokemonGen";
 import BaseStats from "../../components/baseStats";
 import ContextHeader from "../../components/contextHeader";
+import TypingBox from "../../components/typingBox";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -57,13 +58,17 @@ const PokemonEntry = () => {
               pokedex_number={pokemon.pokedex_number}
             />
           </div>
-          <div>
+          <div className="img-types-cont">
             <Image
               src={`/pokemon/${pokemon.name}.png`}
               alt={pokemon.name}
               width={350}
               height={350}
             />
+            <div className="types">
+              <TypingBox type={pokemon.type_1}/>
+              <TypingBox type={pokemon.type_2}/>
+            </div>
           </div>
         </div>
         <div className="heart-cont">
@@ -84,7 +89,7 @@ const PokemonEntry = () => {
             <div className="about-sec">
               <div className="left">
                 <h3>About</h3>
-                <StatValue category={"Generation:"} value={pokemon.generation}></StatValue>
+                <StatValue category={"Generation: "} value={pokemon.generation}></StatValue>
                 <StatValue category={"Status:"} value={pokemon.status}></StatValue>
                 <StatValue category={"Species:"} value={pokemon.species}></StatValue>
                 <StatValue category={"Height:"} value={pokemon.height_m}></StatValue>
