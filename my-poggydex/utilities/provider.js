@@ -17,6 +17,7 @@ export default function MyThemeProvider({ children }) {
         {`
           body {
             background-color: ${themes[theme].body};
+            font-color: ${themes[theme].body};
           }
         `}
       </style>

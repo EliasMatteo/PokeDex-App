@@ -3,3 +3,16 @@
   flex-flow: row wrap;
   justify-content: center;
 }
+
+.button-cont{
+  display: flex;
+  button{
+    font-family: Poppins;
+    font-weight: light;
+    
+    background: none;
+    border: none;
+    font-size: 24px;
+    margin: 5px;
+  }
+}
