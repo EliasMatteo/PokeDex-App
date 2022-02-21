@@ -54482,5 +54482,12 @@
    "against_dark": 1,
    "against_steel": 1,
    "against_fairy": 1
- }
+ },
+ {
+  "name": "Henry",
+  "pokedex_number": 891,
+  "type_1": "Kaggle",
+  "type_2": "Nextjs",
+  "species": "Calender Pokémon"
+}
 ]

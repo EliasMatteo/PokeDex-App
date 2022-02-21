@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import { useTheme } from "../utilities/provider";
 
 // import components
 import SearchBar from "../components/searchBar";
@@ -10,6 +11,7 @@ export default function Home() {
   const [name, setName] = useState("");
   const [pokemons, setPokemons] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     if (!isSearching) return;
@@ -37,6 +39,14 @@ export default function Home() {
         changePokemon={(e) => setName(e.target.value)}
         clickPokemon={() => setIsSearching(true)}
       />
+      <div className="button-cont">
+        <Link href={"settings"}>
+          <button>Settings</button>
+        </Link>
+        <Link href={"favourites"}>
+          <button>Favourites</button>
+        </Link>
+      </div>
       {/* data mapping */}
       <div className="index-pokedex-card-display">
         {pokemons.length > 0 &&
