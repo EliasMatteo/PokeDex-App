@@ -3,11 +3,13 @@ import Image from "next/image";
 const HighContrastToggleSwitch = ({
   isContrastChecked,
   handleContrastToggle,
+  onClick,
 }) => {
   console.log(isContrastChecked);
   return (
     <div className="switch-cont">
       <input
+        onClick={onClick}
         checked={isContrastChecked}
         onChange={handleContrastToggle}
         type="checkbox"
