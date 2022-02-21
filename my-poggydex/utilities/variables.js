@@ -6,10 +6,10 @@ export const themes = {
     body: "#151515",
   },
   bold: {
-    text: bold,
+    text: "bold",
   },
   regular: {
-    text: regular,
+    text: "regular",
   },
   contrast: {
     text: "#151515",

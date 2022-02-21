@@ -2,7 +2,7 @@ import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
+import { useTheme } from "../../utilities/provider";
 //components
 import PokemonEvolution from "../../components/pokemonEvolution";
 import ListButton from "../../components/listButton";
@@ -18,12 +18,14 @@ import "react-tabs/style/react-tabs.css";
 import InfoTab from "../../components/infoTab";
 import StatValue from "../../components/statValue";
 import FavHeartIcon from "../../components/favHeartIcon";
+import Link from "next/link";
 
 const PokemonEntry = () => {
   const router = useRouter();
   const { pokemonName } = router.query;
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { setTheme } = useTheme();
 
   // match the pokemon to dynamic prop pokemonName using search api
   useEffect(() => {
@@ -54,6 +56,9 @@ const PokemonEntry = () => {
       <div className="sec1">
         <div className="name-img">
           <div>
+            <Link href={'/'}>
+              <button>Home Page</button>
+            </Link>
             <ContextHeader
               name={pokemon.name}
               japanese_name={pokemon.japanese_name}
@@ -69,8 +74,8 @@ const PokemonEntry = () => {
               height={350}
             />
             <div className="types">
-              <TypingBox type={pokemon.type_1}/>
-              <TypingBox type={pokemon.type_2}/>
+              <TypingBox type={pokemon.type_1} />
+              <TypingBox type={pokemon.type_2} />
             </div>
           </div>
         </div>
@@ -91,22 +96,58 @@ const PokemonEntry = () => {
           <TabPanel>
             <div className="about-sec">
               <div className="left">
-                <h3>About</h3>
-                <StatValue category={"Generation: "} value={pokemon.generation}></StatValue>
-                <StatValue category={"Status:"} value={pokemon.status}></StatValue>
-                <StatValue category={"Species:"} value={pokemon.species}></StatValue>
-                <StatValue category={"Height:"} value={pokemon.height_m}></StatValue>
-                <StatValue category={"Weight:"} value={pokemon.weight_kg}></StatValue>
-                <StatValue category={"Abilities:"} value={pokemon.ability_1}></StatValue>
+                <h2>About</h2>
+                <StatValue
+                  category={"Generation:"}
+                  value={pokemon.generation}
+                ></StatValue>
+                <StatValue
+                  category={"Status:"}
+                  value={pokemon.status}
+                ></StatValue>
+                <StatValue
+                  category={"Species:"}
+                  value={pokemon.species}
+                ></StatValue>
+                <StatValue
+                  category={"Height:"}
+                  value={pokemon.height_m}
+                ></StatValue>
+                <StatValue
+                  category={"Weight:"}
+                  value={pokemon.weight_kg}
+                ></StatValue>
+                <StatValue
+                  category={"Abilities:"}
+                  value={pokemon.ability_1}
+                ></StatValue>
               </div>
               <div className="right">
-              <h3>Training</h3>
-                <StatValue category={"Catch Rate:"} value={pokemon.catch_rate}></StatValue>
-                <StatValue category={"Base Friendship:"} value={pokemon.base_friendship}></StatValue>
-                <StatValue category={"Base Experience:"} value={pokemon.base_experience}></StatValue>
-                <StatValue category={"Growth Rate:"} value={pokemon.growth_rate}></StatValue>
-                <StatValue category={"Egg Type:"} value={pokemon.egg_type_1}></StatValue>
-                <StatValue category={"Egg Cycle:"} value={pokemon.egg_cycles}></StatValue>
+                <h3>Training</h3>
+                <StatValue
+                  category={"Catch Rate:"}
+                  value={pokemon.catch_rate}
+                ></StatValue>
+                <StatValue
+                  category={"Base Friendship:"}
+                  value={pokemon.base_friendship}
+                ></StatValue>
+                <StatValue
+                  category={"Base Experience:"}
+                  value={pokemon.base_experience}
+                ></StatValue>
+                <StatValue
+                  category={"Growth Rate:"}
+                  value={pokemon.growth_rate}
+                ></StatValue>
+                <StatValue
+                  category={"Egg Type:"}
+                  value={pokemon.egg_type_1}
+                ></StatValue>
+                <StatValue
+                  category={"Egg Cycle:"}
+                  value={pokemon.egg_cycles}
+                ></StatValue>
               </div>
             </div>
           </TabPanel>
@@ -128,11 +169,6 @@ const PokemonEntry = () => {
           </TabPanel>
         </Tabs>
       </div>
-      <hr />
-      <ListButton />
-      <ListButton listtext={"Generations"} />
-      <PokemonType />
-      <PokemonGen />
     </div>
   );
 };
