@@ -22,10 +22,12 @@ import FavHeartIcon from "../../components/favHeartIcon";
 const PokemonEntry = () => {
   const router = useRouter();
   const { pokemonName } = router.query;
-  const [pokemon, setPokemon] = useState(null);
+  const [pokemon, setPokemon] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // match the pokemon to dynamic prop pokemonName using search api
   useEffect(() => {
+    setLoading(true);
     const matchPokemon = async (pokemonName) => {
       const res = await axios.get("/api/pokemon", {
         params: {
@@ -35,12 +37,13 @@ const PokemonEntry = () => {
       // get the first result of the list
       setPokemon(res.data[0]);
     };
+    setLoading(false);
     matchPokemon(pokemonName);
   }, [pokemonName]);
 
   // while searching loading screen
   // prevents run time error
-  if (pokemon === null) {
+  if (loading) {
     return <div>loading...</div>;
   }
 
@@ -119,17 +122,17 @@ const PokemonEntry = () => {
           </TabPanel>
 
           <TabPanel>
-            <PokemonEvolution pokemonname="bulbasaur" arrowDisplay="show" />
-            <PokemonEvolution pokemonname="ivysaur" arrowDisplay="show" />
-            <PokemonEvolution pokemonname="venusaur" arrowDisplay={null} />
+            <PokemonEvolution pokemonname={pokemon.name} arrowDisplay="show" />
+            <PokemonEvolution pokemonname={pokemon.name} arrowDisplay="show" />
+            <PokemonEvolution pokemonname={pokemon.name} arrowDisplay={null} />
           </TabPanel>
         </Tabs>
       </div>
       <hr />
-      {/* <ListButton />
-  <ListButton listtext={"Generations"} />
-  <PokemonType />
-  <PokemonGen /> */}
+      <ListButton />
+      <ListButton listtext={"Generations"} />
+      <PokemonType />
+      <PokemonGen />
     </div>
   );
 };
