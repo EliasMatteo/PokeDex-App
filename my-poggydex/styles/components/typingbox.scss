@@ -1,10 +1,9 @@
 .typing-box {
-  display: inline-block;
+  display: flex;
   background: #70e289;
   color: #ffffff;
   font-weight: 500;
   padding: 10px 25px;
   border-radius: 25px;
   margin: 5px;
-  max-width: 100px;
 }
