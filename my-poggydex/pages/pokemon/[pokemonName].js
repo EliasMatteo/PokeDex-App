@@ -56,7 +56,7 @@ const PokemonEntry = () => {
       <div className="sec1">
         <div className="name-img">
           <div>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <button>Home Page</button>
             </Link>
             <ContextHeader
@@ -75,7 +75,8 @@ const PokemonEntry = () => {
             />
             <div className="types">
               <TypingBox type={pokemon.type_1} />
-              <TypingBox type={pokemon.type_2} />
+              {/* if type 2 doesn't exist, don't show */}
+              {pokemon.type_2 == "" ? null : <TypingBox type={pokemon.type_2} />}
             </div>
           </div>
         </div>
