@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTheme } from "../utilities/provider";
 
 // import components
+import Logo from "../components/logo";
 import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
 
@@ -35,6 +36,7 @@ export default function Home() {
   }, [isSearching, setIsSearching, name]);
   return (
     <div>
+      <Logo name="Pokedex" />
       <SearchBar
         changePokemon={(e) => setName(e.target.value)}
         clickPokemon={() => setIsSearching(true)}
