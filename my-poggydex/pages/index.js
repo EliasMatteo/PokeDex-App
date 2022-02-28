@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <div className="page-container">
       <div className="nav-bar">
-        <Logo name="Pokedex" />
+        <Logo name="Pokédex" />
         <SearchBar
           changePokemon={(e) => setName(e.target.value)}
           clickPokemon={() => setIsSearching(true)}

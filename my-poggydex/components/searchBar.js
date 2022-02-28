@@ -6,7 +6,7 @@ const SearchBar = ({ changePokemon, clickPokemon }) => {
       <input
         className="searh-bar-text-box"
         onChange={changePokemon}
-        placeholder="Pokemon Name"
+        placeholder="Search for Pokémon here"
       />
       <button className="search-bar-button" onClick={clickPokemon}>
         <Image
