@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTheme } from "../utilities/provider";
 
 // import components
+import Logo from "../components/logo";
 import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
 
@@ -34,18 +35,21 @@ export default function Home() {
     if (isSearching) return () => (cancelSetPokemons = true);
   }, [isSearching, setIsSearching, name]);
   return (
-    <div>
-      <SearchBar
-        changePokemon={(e) => setName(e.target.value)}
-        clickPokemon={() => setIsSearching(true)}
-      />
-      <div className="button-cont">
-        <Link href={"settings"}>
-          <button>Settings</button>
-        </Link>
-        <Link href={"favourites"}>
-          <button>Favourites</button>
-        </Link>
+    <div className="page-container">
+      <div className="nav-bar">
+        <Logo name="Pokédex" />
+        <SearchBar
+          changePokemon={(e) => setName(e.target.value)}
+          clickPokemon={() => setIsSearching(true)}
+        />
+        <div className="button-cont">
+          <Link href={"settings"}>
+            <button>Settings</button>
+          </Link>
+          <Link href={"favourites"}>
+            <button>Favourites</button>
+          </Link>
+        </div>
       </div>
       {/* data mapping */}
       <div className="index-pokedex-card-display">
