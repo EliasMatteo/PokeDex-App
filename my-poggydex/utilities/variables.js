@@ -5,7 +5,7 @@ export const themes = {
   },
   dark: {
     body: "#151515",
-    color: "#fff",
+    color: "#FFFFFF",
   },
   bold: {
     text: "bold",

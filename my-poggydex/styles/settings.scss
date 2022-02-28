@@ -1,30 +1,40 @@
-// .button-cont{
-//     display: flex;
-//     button{
-//       font-family: Poppins;
-//       font-weight: light;
-//       color: #fff;
-//       background: none;
-//       border: none;
-//       font-size: 24px;
-//       margin: 5px;
-//     }
+// .button-cont {
+//   display: flex;
+//   flex-direction: row;
+//   button {
+//     font-family: Poppins;
+//     font-weight: light;
+//     background: none;
+//     border: none;
+//     font-size: 24px;
+//     margin: 5px;
 //   }
+// }
 
-.cont-settings{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    
+.cont-settings {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  overflow: hidden;
 }
 
-.cont-toggle{
-    width: 350px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-    
-    
+.cont-toggle {
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.pokeball-setting-bg {
+  right: 100px;
+  z-index: 0;
+  position: relative;
+}
+
+.filter-cont {
+  background: none;
+  box-shadow: none;
+  border: none;
+  font-size: 20px;
 }
