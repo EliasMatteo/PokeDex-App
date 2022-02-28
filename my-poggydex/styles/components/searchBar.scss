@@ -10,6 +10,10 @@
   margin: 10px 0;
 }
 
+.search-bar:focus-within{
+  box-shadow: 0 0 2px #7F8C8E;
+}
+
 .searh-bar-text-box {
   border: none;
   background-color: transparent;
