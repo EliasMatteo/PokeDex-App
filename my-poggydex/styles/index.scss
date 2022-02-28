@@ -1,3 +1,14 @@
+.page-container {
+  margin: 0 30px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .index-pokedex-card-display {
   display: flex;
   flex-flow: row wrap;
