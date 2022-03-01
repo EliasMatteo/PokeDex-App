@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const SearchBar = ({ changePokemon, clickPokemon }) => {
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       clickPokemon();
     }
-  }
+  };
   return (
     <div className="search-bar">
       <input

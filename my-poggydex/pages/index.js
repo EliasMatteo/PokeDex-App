@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useTheme } from "../utilities/provider";
+import { useType } from "../utilities/typeProvider";
 
 // import components
 import Logo from "../components/logo";
@@ -13,15 +14,18 @@ export default function Home() {
   const [pokemons, setPokemons] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const { setTheme } = useTheme();
+  const { type } = useType();
 
   useEffect(() => {
     if (!isSearching) return;
 
     let cancelSetPokemons = false;
     const getPokemons = async () => {
+      console.log(type);
       const res = await axios.get("/api/pokemon", {
         params: {
           name: name,
+          type: type.join(","),
         },
       });
       if (!cancelSetPokemons) {

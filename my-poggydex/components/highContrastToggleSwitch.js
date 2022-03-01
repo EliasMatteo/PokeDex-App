@@ -5,7 +5,7 @@ const HighContrastToggleSwitch = ({
   handleContrastToggle,
   onClick,
 }) => {
-  console.log(isContrastChecked);
+  console.log(isContrastChecked); 
   return (
     <div className="switch-cont">
       <input
