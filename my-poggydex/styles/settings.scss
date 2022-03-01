@@ -13,9 +13,10 @@
 
 .cont-settings {
   display: flex;
-  flex-direction: column;
-  margin: 20px;
+  flex-direction: row;
+  margin: 0px;
   overflow: hidden;
+  justify-content: space-between;
 }
 
 .cont-toggle {
@@ -27,14 +28,25 @@
 }
 
 .pokeball-setting-bg {
-  right: 100px;
   z-index: 0;
   position: relative;
+  margin: 0;
+  top: -100px;
+  right: -100px;
 }
 
-.filter-cont {
+.pokeball-cont {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-toggle {
   background: none;
   box-shadow: none;
   border: none;
   font-size: 20px;
+}
+
+.test-cont {
+  margin: 50px;
 }
