@@ -13,9 +13,8 @@ import ContextHeader from "../../components/contextHeader";
 import TypingBox from "../../components/typingBox";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+// import "react-tabs/style/react-tabs.css";
 
-import InfoTab from "../../components/infoTab";
 import StatValue from "../../components/statValue";
 import FavHeartIcon from "../../components/favHeartIcon";
 import Link from "next/link";
@@ -160,13 +159,20 @@ const PokemonEntry = () => {
             <BaseStats statname={"Defense"} stat={pokemon.defense} />
             <BaseStats statname={"Sp.Defense"} stat={pokemon.sp_defense} />
             <BaseStats statname={"Speed"} stat={pokemon.speed} />
+            <div className="experience">
+            <BaseStats statname={"Base Experience"} stat={pokemon.base_experience} />
+            <BaseStats statname={"Base Friendship"} stat={pokemon.base_friendship} />
+            </div>
+
             {/* missing base_experience & base_friendship */}
           </TabPanel>
 
           <TabPanel>
+            <div className="evolutions">
             <PokemonEvolution pokemonname={pokemon.name} arrowDisplay="show" />
             <PokemonEvolution pokemonname={pokemon.name} arrowDisplay="show" />
             <PokemonEvolution pokemonname={pokemon.name} arrowDisplay={null} />
+            </div>
           </TabPanel>
         </Tabs>
       </div>
