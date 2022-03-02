@@ -64,7 +64,13 @@ export default function Settings() {
             {isOpenType && (
               <div className="content">
                 {" "}
-                <PokemonType />{" "}
+                <PokemonType />
+                <PokemonType typetext="Grass" />
+                <PokemonType typetext="Fighting" />
+                <PokemonType typetext="Fairy" />
+                <PokemonType typetext="Water" />
+                <PokemonType typetext="Flying" />
+                <PokemonType typetext="Fire" />{" "}
               </div>
             )}
           </div>
@@ -82,12 +88,13 @@ export default function Settings() {
             {isOpen && (
               <div className="content">
                 {" "}
-                <PokemonGen />
-                <PokemonGen />
-                <PokemonGen />
-                <PokemonGen />
-                <PokemonGen />
-                <PokemonGen />{" "}
+                <PokemonGen typetext="1" />
+                <PokemonGen typetext="2" />
+                <PokemonGen typetext="3" />
+                <PokemonGen typetext="4" />
+                <PokemonGen typetext="5" />
+                <PokemonGen typetext="6" />
+                <PokemonGen typetext="7" />{" "}
               </div>
             )}
           </div>

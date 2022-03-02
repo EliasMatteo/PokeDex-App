@@ -50,3 +50,18 @@
 .test-cont {
   margin: 50px;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  z-index: 2;
+  top: 50px;
+}
+
+.pop-up-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
