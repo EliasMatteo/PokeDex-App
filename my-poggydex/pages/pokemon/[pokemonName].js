@@ -123,7 +123,7 @@ const PokemonEntry = () => {
                 ></StatValue>
               </div>
               <div className="right">
-                <h3>Training</h3>
+                <h2>Training</h2>
                 <StatValue
                   category={"Catch Rate:"}
                   value={pokemon.catch_rate}

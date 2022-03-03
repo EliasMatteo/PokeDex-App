@@ -79,6 +79,7 @@ export default function Settings() {
           }
         />
       </div>
+      <h1 className="filter">Filters</h1>
       {/* for test displaying array please don't delete
       {JSON.stringify(type)} */}
       {pokemonTypes.map((pokemonType) => (
