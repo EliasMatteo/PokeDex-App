@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useTheme } from "../utilities/provider";
 import { useType } from "../utilities/typeProvider";
+import { useGeneration } from "../utilities/generationProvider";
 
 // import components
 import Logo from "../components/logo";
@@ -15,6 +16,7 @@ export default function Home() {
   const [isSearching, setIsSearching] = useState(false);
   const { setTheme } = useTheme();
   const { type } = useType();
+  const { generation } = useGeneration();
 
   useEffect(() => {
     if (!isSearching) return;
@@ -26,6 +28,7 @@ export default function Home() {
         params: {
           name: name,
           type: type.join(","),
+          generation: generation.join(","),
         },
       });
       if (!cancelSetPokemons) {
@@ -38,6 +41,7 @@ export default function Home() {
 
     if (isSearching) return () => (cancelSetPokemons = true);
   }, [isSearching, setIsSearching, name]);
+
   return (
     <div className="page-container">
       <div className="nav-bar">
