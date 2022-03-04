@@ -1,3 +1,3 @@
-# PokeDex application
+# Pogmon-My-Redacted
 
-# This application is using a kaggle dataset for all its json resources and a images repo for all images provided
+# So like no one knows what im putting here
