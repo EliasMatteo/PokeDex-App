@@ -14,6 +14,7 @@ export default function Home() {
   const [name, setName] = useState("");
   const [pokemons, setPokemons] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
   const { setTheme } = useTheme();
   const { type } = useType();
   const { generation } = useGeneration();
@@ -33,6 +34,7 @@ export default function Home() {
       });
       if (!cancelSetPokemons) {
         setPokemons(res.data);
+        setHasSearched(true);
         setIsSearching(false);
       }
     };
@@ -61,6 +63,18 @@ export default function Home() {
       </div>
       {/* data mapping */}
       <div className="index-pokedex-card-display">
+        {pokemons.length === 0 && hasSearched && (
+          <div className="empty-search-handle">
+            <h2>No Pokémon Matched Your Search</h2>
+            <p>Try these suggestions to find a Pokémon:</p>
+            <ul>
+              <li>Reduce the number of search parameters</li>
+              <li>Search for only one Pokémon type at a time</li>
+              <li>Remove generation limit</li>
+            </ul>
+            <p>Configure your search preferences in Settings</p>
+          </div>
+        )}
         {pokemons.length > 0 &&
           pokemons.map((pokemon) => (
             <div key={pokemon.name}>
