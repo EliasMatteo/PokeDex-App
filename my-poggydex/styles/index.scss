@@ -15,15 +15,25 @@
   justify-content: center;
 }
 
-.button-cont{
+.button-cont {
   display: flex;
-  button{
+  button {
     font-family: Poppins;
     font-weight: light;
-    
+
     background: none;
     border: none;
     font-size: 24px;
     margin: 5px;
   }
+}
+
+.empty-search-handle {
+  border: 2px solid #fd6c6d;
+  border-radius: 10px;
+  padding: 0 40px 20px 40px;
+}
+
+.empty-search-handle > h2 {
+  color: #fd6c6d;
 }
