@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "../utilities/provider";
 import { useType } from "../utilities/typeProvider";
+import { useGeneration } from "../utilities/generationProvider";
 
 // components
 import BoldTextToggleSwitch from "../components/boldTextToggleSwitch";
@@ -48,6 +49,31 @@ export default function Settings() {
     setType(newType);
   };
 
+  const { generation, setGeneration } = useGeneration();
+  const pokemonGenerations = [
+    "Generation I",
+    "Generation II",
+    "Generation III",
+    "Generation IV",
+    "Generation V",
+    "Generation VI",
+    "Generation VII",
+    "Generation VIII",
+    "Generation IX",
+  ];
+  const handleGenerationClick = (pokemonGeneration) => {
+    const isInOldGenerations = generation.find((g) => g === pokemonGeneration);
+    let newGeneration = [...generation];
+
+    if (isInOldGenerations) {
+      newGeneration = newGeneration.filter((g) => g !== pokemonGeneration);
+    } else {
+      newGeneration.push(pokemonGeneration);
+    }
+
+    setGeneration(newGeneration);
+  };
+
   return (
     <div className="cont-settings">
       <div className="button-cont">
@@ -81,9 +107,18 @@ export default function Settings() {
       </div>
       {/* for test displaying array please don't delete
       {JSON.stringify(type)} */}
+      {JSON.stringify(generation)}
       {pokemonTypes.map((pokemonType) => (
         <button key={pokemonType} onClick={() => handleTypeClick(pokemonType)}>
           {pokemonType}
+        </button>
+      ))}
+      {pokemonGenerations.map((pokemonGeneration, idx) => (
+        <button
+          key={pokemonGeneration}
+          onClick={() => handleGenerationClick(idx + 1)}
+        >
+          {pokemonGeneration}
         </button>
       ))}
     </div>
