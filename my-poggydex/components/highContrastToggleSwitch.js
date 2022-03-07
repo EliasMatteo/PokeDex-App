@@ -1,15 +1,18 @@
 import Image from "next/image";
+import { useTheme } from "../utilities/provider";
 
 const HighContrastToggleSwitch = ({
   isContrastChecked,
   handleContrastToggle,
   onClick,
 }) => {
+  const {contrastTheme, setContrastTheme} = useTheme();
+  const inlineStyle = {};
   console.log(isContrastChecked);
   return (
-    <div className="switch-cont">
+    <div className={`switch-cont-${contrastTheme}`} >
       <input
-        onClick={onClick}
+        onClick={() => setContrastTheme(contrastTheme === "contrast" ? "normal" : "contrast")}
         checked={isContrastChecked}
         onChange={handleContrastToggle}
         type="checkbox"
