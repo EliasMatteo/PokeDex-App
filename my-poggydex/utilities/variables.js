@@ -5,18 +5,20 @@ export const themes = {
   },
   dark: {
     body: "#151515",
-    color: "#fff",
+    color: "#FFFFFF",
   },
   bold: {
     text: "bold",
+    cool: "red"
   },
   regular: {
-    text: "",
+    text: "500",
+    cool: "blue"
   },
   contrast: {
-    text: "#151515",
+    cool: "red",
   },
   normal: {
-    text: "#FFFFFF",
+    cool: "blue"
   },
 };
