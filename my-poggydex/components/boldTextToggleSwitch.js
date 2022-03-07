@@ -1,13 +1,10 @@
 import Image from "next/image";
-import { useTheme } from "../utilities/provider";
 
 const BoldTextToggleSwitch = ({ isBoldChecked, handleBoldToggle }) => {
   console.log(isBoldChecked);
-  const { boldTheme, setBoldTheme } = useTheme();
   return (
-    <div className={`switch-cont-${boldTheme}`}>
+    <div className="switch-cont">
       <input
-        onClick={() => setBoldTheme(boldTheme === "bold" ? "regular" : "bold")}
         checked={isBoldChecked}
         onChange={handleBoldToggle}
         type="checkbox"

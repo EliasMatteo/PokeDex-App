@@ -9,16 +9,14 @@ export const themes = {
   },
   bold: {
     text: "bold",
-    cool: "red"
   },
   regular: {
-    text: "500",
-    cool: "blue"
+    text: "",
   },
   contrast: {
-    cool: "red",
+    text: "#151515",
   },
   normal: {
-    cool: "blue"
+    text: "#FFFFFF",
   },
 };
