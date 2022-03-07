@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useTheme } from "../utilities/provider";
+import { useType } from "../utilities/typeProvider";
+import { useGeneration } from "../utilities/generationProvider";
+
+// components
 import BoldTextToggleSwitch from "../components/boldTextToggleSwitch";
 import HighContrastToggleSwitch from "../components/highContrastToggleSwitch";
 import ThemeToggleSwitch from "../components/themeToggleSwitch";
-import { useTheme } from "../utilities/provider";
-import Image from "next/image";
-import PokemonGen from "../components/pokemonGen";
-import PokemonType from "../components/pokemonType";
 
 export default function Settings() {
   const [switchThemeState, setSwitchThemeState] = useState(false);
@@ -15,6 +16,65 @@ export default function Settings() {
   const { setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenType, setIsOpenType] = useState(false);
+
+  const { type, setType } = useType();
+  const pokemonTypes = [
+    "Bug",
+    "Dark",
+    "Dragon",
+    "Electric",
+    "Fairy",
+    "Fighting",
+    "Fire",
+    "Flying",
+    "Ghost",
+    "Grass",
+    "Ground",
+    "Ice",
+    "Normal",
+    "Poison",
+    "Psychic",
+    "Rock",
+    "Steel",
+    "Water",
+  ];
+  const handleTypeClick = (pokemonType) => {
+    const isInOldTypes = type.find((t) => t === pokemonType);
+    let newType = [...type];
+
+    if (isInOldTypes) {
+      newType = newType.filter((t) => t !== pokemonType);
+    } else {
+      newType.push(pokemonType);
+    }
+
+    setType(newType);
+  };
+
+  const { generation, setGeneration } = useGeneration();
+  const pokemonGenerations = [
+    "Generation I",
+    "Generation II",
+    "Generation III",
+    "Generation IV",
+    "Generation V",
+    "Generation VI",
+    "Generation VII",
+    "Generation VIII",
+    "Generation IX",
+  ];
+  const handleGenerationClick = (pokemonGeneration) => {
+    const isInOldGenerations = generation.find((g) => g === pokemonGeneration);
+    let newGeneration = [...generation];
+
+    if (isInOldGenerations) {
+      newGeneration = newGeneration.filter((g) => g !== pokemonGeneration);
+    } else {
+      newGeneration.push(pokemonGeneration);
+    }
+
+    setGeneration(newGeneration);
+  };
 
   return (
     <div className="cont-settings">
@@ -106,6 +166,22 @@ export default function Settings() {
           <Image src="/pokeball.svg" alt="pokeball" width={800} height={800} />
         </div>
       </div>
+      {/* for test displaying array please don't delete
+      {JSON.stringify(type)} */}
+      {JSON.stringify(generation)}
+      {pokemonTypes.map((pokemonType) => (
+        <button key={pokemonType} onClick={() => handleTypeClick(pokemonType)}>
+          {pokemonType}
+        </button>
+      ))}
+      {pokemonGenerations.map((pokemonGeneration, idx) => (
+        <button
+          key={pokemonGeneration}
+          onClick={() => handleGenerationClick(idx + 1)}
+        >
+          {pokemonGeneration}
+        </button>
+      ))}
     </div>
   );
 }

@@ -6,11 +6,11 @@ import TypingBox from "./typingBox";
 const PokedexCardCont = ({ pokemonname, type1, type2 }) => {
   return (
     <div className="pokedex-card-container">
-      <div className="pokedex-card-cont">
+      <div className={`pokedex-card-cont-${type1}`}>
         <h1>{pokemonname}</h1>
-        <TypingBox type={type1} />
+        <TypingBox type={type1} typestyle={type1} />
         {/* if type 2 doesn't exist, don't show */}
-        {type2 == "" ? null : <TypingBox type={type2} />}
+        {type2 == "" ? null : <TypingBox type={type2} typestyle={type1} />}
       </div>
       <div className="pokedex-card-image">
         <Image
