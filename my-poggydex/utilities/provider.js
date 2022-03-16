@@ -6,7 +6,7 @@ const initalStates = {
   theme: "bold",
   theme: "contrast",
   setTheme: () => {},
-  setBoldTheme: () => {}
+  setBoldTheme: () => {},
 };
 
 const MyThemeContext = createContext(initalStates);
@@ -14,16 +14,24 @@ const MyThemeContext = createContext(initalStates);
 export default function MyThemeProvider({ children }) {
   const [theme, setTheme] = useState("light");
   const [boldTheme, setBoldTheme] = useState("regular");
-  const [contrastTheme, setContrastTheme] = useState ("normal");
+  const [contrastTheme, setContrastTheme] = useState("normal");
 
   return (
-    <MyThemeContext.Provider value={{ theme, setTheme, boldTheme, setBoldTheme, contrastTheme, setContrastTheme }}>
+    <MyThemeContext.Provider
+      value={{
+        theme,
+        setTheme,
+        boldTheme,
+        setBoldTheme,
+        contrastTheme,
+        setContrastTheme,
+      }}
+    >
       <style jsx global>
         {`
           body {
             background-color: ${themes[theme].body};
             color: ${themes[theme].color};
-            
           }
           button {
             color: ${themes[theme].color};
@@ -34,12 +42,15 @@ export default function MyThemeProvider({ children }) {
             font-weight: ${themes[boldTheme].text};
           }
           p {
+            color: ${themes[theme].color};
             font-weight: ${themes[boldTheme].text};
           }
           h1 {
+            color: ${themes[theme].color};
             font-weight: ${themes[boldTheme].text};
           }
           span {
+            color: ${themes[theme].color};
             font-weight: ${themes[boldTheme].text};
           }
         `}
@@ -50,6 +61,20 @@ export default function MyThemeProvider({ children }) {
 }
 
 export function useTheme() {
-  const { theme, setTheme, boldTheme, setBoldTheme, contrastTheme, setContrastTheme } = useContext(MyThemeContext);
-  return { theme, setTheme, boldTheme, setBoldTheme, contrastTheme, setContrastTheme };
+  const {
+    theme,
+    setTheme,
+    boldTheme,
+    setBoldTheme,
+    contrastTheme,
+    setContrastTheme,
+  } = useContext(MyThemeContext);
+  return {
+    theme,
+    setTheme,
+    boldTheme,
+    setBoldTheme,
+    contrastTheme,
+    setContrastTheme,
+  };
 }
