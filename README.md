@@ -1,3 +1,3 @@
-# Pogmon-My-Redacted
+# PokeDex
 
-# So like no one knows what im putting here
+# Ux focused pokedex application 
