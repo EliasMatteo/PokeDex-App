@@ -1,7 +1,7 @@
 export const themes = {
   light: {
     body: "#FFFFFF",
-    color: "#000",
+    color: "#000000",
   },
   dark: {
     body: "#151515",
@@ -9,16 +9,16 @@ export const themes = {
   },
   bold: {
     text: "bold",
-    cool: "red"
+    cool: "red",
   },
   regular: {
     text: "500",
-    cool: "blue"
+    cool: "blue",
   },
   contrast: {
     cool: "red",
   },
   normal: {
-    cool: "blue"
+    cool: "blue",
   },
 };

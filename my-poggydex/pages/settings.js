@@ -3,11 +3,14 @@ import { useState } from "react";
 import { useTheme } from "../utilities/provider";
 import { useType } from "../utilities/typeProvider";
 import { useGeneration } from "../utilities/generationProvider";
+import Image from "next/image";
 
 // components
 import BoldTextToggleSwitch from "../components/boldTextToggleSwitch";
 import HighContrastToggleSwitch from "../components/highContrastToggleSwitch";
 import ThemeToggleSwitch from "../components/themeToggleSwitch";
+import PokemonGen from "../components/pokemonGen";
+import PokemonType from "../components/pokemonType";
 
 export default function Settings() {
   const [switchThemeState, setSwitchThemeState] = useState(false);
@@ -123,14 +126,15 @@ export default function Settings() {
 
             {isOpenType && (
               <div className="content">
-                {" "}
-                <PokemonType />
-                <PokemonType typetext="Grass" />
-                <PokemonType typetext="Fighting" />
-                <PokemonType typetext="Fairy" />
-                <PokemonType typetext="Water" />
-                <PokemonType typetext="Flying" />
-                <PokemonType typetext="Fire" />{" "}
+                {pokemonTypes.map((pokemonType) => (
+                  <PokemonType
+                    key={pokemonType}
+                    onClick={() => handleTypeClick(pokemonType)}
+                    typetext={pokemonType}
+                  >
+                    {pokemonType}
+                  </PokemonType>
+                ))}
               </div>
             )}
           </div>
@@ -147,14 +151,15 @@ export default function Settings() {
 
             {isOpen && (
               <div className="content">
-                {" "}
-                <PokemonGen typetext="1" />
-                <PokemonGen typetext="2" />
-                <PokemonGen typetext="3" />
-                <PokemonGen typetext="4" />
-                <PokemonGen typetext="5" />
-                <PokemonGen typetext="6" />
-                <PokemonGen typetext="7" />{" "}
+                {pokemonGenerations.map((pokemonGeneration, idx) => (
+                  <PokemonGen
+                    key={pokemonGeneration}
+                    onClick={() => handleGenerationClick(idx + 1)}
+                    typetext={pokemonGeneration}
+                  >
+                    {pokemonGeneration}
+                  </PokemonGen>
+                ))}
               </div>
             )}
           </div>
@@ -163,12 +168,17 @@ export default function Settings() {
 
       <div className="pokeball-cont">
         <div className="pokeball-setting-bg">
-          <Image src="/pokeball.svg" alt="pokeball" width={800} height={800} />
+          <Image
+            src="/black-pokeball.svg"
+            alt="pokeball"
+            width={800}
+            height={800}
+          />
         </div>
       </div>
       {/* for test displaying array please don't delete
       {JSON.stringify(type)} */}
-      {JSON.stringify(generation)}
+      {/* {JSON.stringify(generation)}
       {pokemonTypes.map((pokemonType) => (
         <button key={pokemonType} onClick={() => handleTypeClick(pokemonType)}>
           {pokemonType}
@@ -181,7 +191,7 @@ export default function Settings() {
         >
           {pokemonGeneration}
         </button>
-      ))}
+      ))} */}
     </div>
   );
 }

@@ -3,7 +3,7 @@ const PokemonGen = ({ typetext = "1" }) => {
     <button className="pokemon-gen-cont">
       <div className="pokemon-gen-color" />
       <div className="pokemon-gen-text-cont">
-        <h1 className="pokemon-gen-text">Generation {typetext}</h1>
+        <h1 className="pokemon-gen-text">{typetext}</h1>
       </div>
     </button>
   );
