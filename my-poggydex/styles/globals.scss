@@ -7,6 +7,7 @@
 @import "./index.scss";
 @import "./pokemonEntry.scss";
 @import "./settings.scss";
+@import "./login.scss";
 
 // components
 @import "./components/typingbox.scss";
@@ -25,7 +26,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  
 }
 
 a {
