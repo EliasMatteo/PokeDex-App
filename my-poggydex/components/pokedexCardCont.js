@@ -14,7 +14,7 @@ const PokedexCardCont = ({ pokemonname, type1, type2 }) => {
       </div>
       <div className="pokedex-card-image">
         <Image
-          src={`/pokemon/${pokemonname}.png`}
+          src={`${process.env.NEXT_PUBLIC_POKEMON_API}/pokemon/${pokemonname}.png`}
           alt={pokemonname}
           width={100}
           height={100}
