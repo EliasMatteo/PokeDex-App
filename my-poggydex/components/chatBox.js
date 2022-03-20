@@ -74,8 +74,8 @@ const ChatBox = ({ msgs, chatTxt, SendToIO, setChatTxt }) => {
         <Image
           src={"/icon/chat.svg"}
           alt="chat icon"
-          width={50}
-          height={50}
+          width={70}
+          height={70}
         />
       </button>
     );
