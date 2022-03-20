@@ -13,6 +13,7 @@ import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
 import ChatBox from "../components/chatBox";
 
+
 export default function Home() {
   const [name, setName] = useState("");
   const [pokemons, setPokemons] = useState([]);
@@ -68,7 +69,7 @@ export default function Home() {
     //   }
     // });
     const socket = io("http://localhost:8888");
-    const test = "hello";
+    // const test = "hello";
 
     // socket.on("user_connected", (users)=>{
     //   setUsers(users);
@@ -78,7 +79,7 @@ export default function Home() {
       // alert(`${id} has connected`)
       setMsgs((prev)=>[
         ...prev,
-        `${test}: ${txt}`
+        `${id}: ${txt}`
      ])
      console.log(socket)
     });

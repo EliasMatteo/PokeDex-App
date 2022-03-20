@@ -53,11 +53,13 @@ const PokemonEntry = () => {
     // <div>{pokemon.name}</div>
     <div className="pokemonEntry-evolution-display">
       <div className="sec1">
+        <div className="button-cont">
+          <Link href={"/"}>
+            <button>back to home</button>
+          </Link>
+        </div>
         <div className="name-img">
           <div>
-            <Link href={"/"}>
-              <button>Home Page</button>
-            </Link>
             <ContextHeader
               name={pokemon.name}
               japanese_name={pokemon.japanese_name}
@@ -75,7 +77,9 @@ const PokemonEntry = () => {
             <div className="types">
               <TypingBox type={pokemon.type_1} />
               {/* if type 2 doesn't exist, don't show */}
-              {pokemon.type_2 == "" ? null : <TypingBox type={pokemon.type_2} />}
+              {pokemon.type_2 == "" ? null : (
+                <TypingBox type={pokemon.type_2} />
+              )}
             </div>
           </div>
         </div>
@@ -160,8 +164,14 @@ const PokemonEntry = () => {
             <BaseStats statname={"Sp.Defense"} stat={pokemon.sp_defense} />
             <BaseStats statname={"Speed"} stat={pokemon.speed} />
             <div className="experience">
-            <BaseStats statname={"Base Experience"} stat={pokemon.base_experience} />
-            <BaseStats statname={"Base Friendship"} stat={pokemon.base_friendship} />
+              <BaseStats
+                statname={"Base Experience"}
+                stat={pokemon.base_experience}
+              />
+              <BaseStats
+                statname={"Base Friendship"}
+                stat={pokemon.base_friendship}
+              />
             </div>
 
             {/* missing base_experience & base_friendship */}
@@ -169,9 +179,18 @@ const PokemonEntry = () => {
 
           <TabPanel>
             <div className="evolutions">
-            <PokemonEvolution pokemonname={pokemon.name} arrowDisplay="show" />
-            <PokemonEvolution pokemonname={pokemon.name} arrowDisplay="show" />
-            <PokemonEvolution pokemonname={pokemon.name} arrowDisplay={null} />
+              <PokemonEvolution
+                pokemonname={pokemon.name}
+                arrowDisplay="show"
+              />
+              <PokemonEvolution
+                pokemonname={pokemon.name}
+                arrowDisplay="show"
+              />
+              <PokemonEvolution
+                pokemonname={pokemon.name}
+                arrowDisplay={null}
+              />
             </div>
           </TabPanel>
         </Tabs>

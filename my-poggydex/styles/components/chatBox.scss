@@ -1,5 +1,4 @@
 .chat-box-container {
-
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -11,6 +10,33 @@
     padding: 10px;
     border-radius: 20px;
 };
+
+.chat-box-hide-button{
+    height: 6px;
+    width: 22px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: black;
+}
+
+.chat-box-hide-button:hover{
+    opacity: 50%
+}
+
+.chat-box-show-button{
+    position:absolute;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    background-color:transparent;
+}
+
+.chat-box-show-button:hover{
+    border: none;
+    background-color:transparent;
+    opacity: 50%;
+}
 
 //CHAT LOG
 
@@ -92,6 +118,10 @@ background: #555;
     font-weight: 500;
     font-size: 18px;
 };
+
+.chat-box-button:hover {
+    background-color: #7fcf91;
+}
 
 
 
