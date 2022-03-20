@@ -40,11 +40,12 @@
     flex: 1.5;
     flex-direction: row;
     border-radius: 25px;
-    background-color: #434343;
-    background-image: url("../public/pokeball.png");
-    background-size: 550px 550px;
-    background-repeat: no-repeat;
-    background-position: right bottom;
+
+}
+
+.experience {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .img-types-cont {
@@ -61,7 +62,7 @@
 .about-sec {
     display: flex;
     width: 100%;
-    padding: 10px 50px 50px 50px;
+    padding: 150px 50px 50px 50px;
 }
 
 .left {
