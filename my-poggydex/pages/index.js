@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useTheme } from "../utilities/provider";
@@ -18,6 +18,8 @@ export default function Home() {
   const { setTheme } = useTheme();
   const { type } = useType();
   const { generation } = useGeneration();
+
+  const wrapperRef = useRef(null);
 
   useEffect(() => {
     if (!isSearching) return;
@@ -43,6 +45,25 @@ export default function Home() {
 
     if (isSearching) return () => (cancelSetPokemons = true);
   }, [isSearching, setIsSearching, name]);
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
+
+  const handleClickOutside = event => {
+    const { current: wrap } = wrapperRef;
+    if (wrap && !wrap.contains(event.target)) {
+      setDisplay(false);
+    }
+  };
+
+  const updatePokeDex = poke => {
+    setSearch(poke);
+    setDisplay(false);
+  };
 
   return (
     <div className="page-container">
