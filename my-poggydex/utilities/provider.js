@@ -41,6 +41,10 @@ export default function MyThemeProvider({ children }) {
             color: ${themes[contrastTheme].cool};
             font-weight: ${themes[boldTheme].text};
           }
+          h2 {
+            color: ${themes[contrastTheme].cool};
+            font-weight: ${themes[boldTheme].text};
+          }
           p {
             color: ${themes[theme].color};
             font-weight: ${themes[boldTheme].text};

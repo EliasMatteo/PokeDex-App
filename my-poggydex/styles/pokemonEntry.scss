@@ -19,6 +19,7 @@
     max-width: 1800px;
     padding: 150px;
     justify-content: space-between;
+    flex-wrap: wrap
 }
 
 .tabs-cont {
@@ -35,7 +36,7 @@
     background-size: 350px 350px;
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 600px;
+    width: 100%;
     margin-right: 50px;
 }
 
@@ -68,7 +69,8 @@
 .about-sec {
     display: flex;
     width: 100%;
-    padding: 150px 50px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    justify-content: center;
 }
 
 .left {
