@@ -30,3 +30,12 @@
   outline: inherit;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 400px) {
+  .search-bar {
+    width: 200px;
+  }
+  .searh-bar-text-box {
+    width: 200px;
+  }
+}
