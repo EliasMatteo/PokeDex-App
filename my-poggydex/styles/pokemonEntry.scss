@@ -7,13 +7,19 @@
 //     background-color: red;
 // }
 
+.pokemonEntry-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
 .pokemonEntry-evolution-display {
     display: flex;
-    background-color: #151515;
-    color: white;
-    width: 100%;
     height: 100vh;
-    padding: 40px;
+    max-width: 1800px;
+    padding: 150px;
+    justify-content: space-between;
+    flex-wrap: wrap
 }
 
 .tabs-cont {
@@ -30,17 +36,18 @@
     background-size: 350px 350px;
     background-repeat: no-repeat;
     background-position: center;
+    width: 100%;
+    margin-right: 50px;
 }
 
 .sec2{
+    right: 0px;
     display: flex;
     align-items: center;
-    padding: 0px;
-    padding-left: 10px;
     flex: 1.5;
     flex-direction: row;
     border-radius: 25px;
-
+    max-width: 1600px;
 }
 
 .experience {
@@ -62,7 +69,8 @@
 .about-sec {
     display: flex;
     width: 100%;
-    padding: 150px 50px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    justify-content: center;
 }
 
 .left {
@@ -94,7 +102,6 @@
 .stat-value{
     display: flex;
     justify-content: space-between;
-    color: white;
     max-width: 310px;
     padding: 10px;
 }

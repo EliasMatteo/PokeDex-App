@@ -6,10 +6,14 @@ import { useType } from "../utilities/typeProvider";
 import { useGeneration } from "../utilities/generationProvider";
 import Image from "next/image";
 
+import { io } from "socket.io-client";
+
 // import components
 import Logo from "../components/logo";
 import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
+import ChatBox from "../components/chatBox";
+
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -20,6 +24,14 @@ export default function Home() {
   const { theme } = useTheme();
   const { type } = useType();
   const { generation } = useGeneration();
+
+
+  const [test, setTest] = useState([]);
+  const [username, setUsername] = useState([]);
+  const [mySoc, setMySoc] = useState(null);
+
+  const [msgs, setMsgs] = useState([]);
+  const [chatTxt, setChatTxt] = useState("");
 
   const wrapperRef = useRef(null);
 
@@ -42,11 +54,51 @@ export default function Home() {
         setIsSearching(false);
       }
     };
+  
 
     getPokemons();
 
     if (isSearching) return () => (cancelSetPokemons = true);
   }, [isSearching, setIsSearching, name]);
+
+
+  //SHIT MIGHT BREAK
+
+  useEffect(()=>{
+    // const socket = io("ws://example.com/my-namespace", {
+    //   reconnectionDelayMax: 10000,
+    //   auth: {
+    //     token: "123"
+    //   },
+    //   query: {
+    //     "my-key": "my-value"
+    //   }
+    // });
+    const socket = io("http://localhost:8888");
+    // const test = "hello";
+
+    // socket.on("user_connected", (users)=>{
+    //   setUsers(users);
+    // })
+
+    socket.on("change", (id, txt)=>{
+      // alert(`${id} has connected`)
+      setMsgs((prev)=>[
+        ...prev,
+        `${id}: ${txt}`
+     ])
+     console.log(socket)
+    });
+
+    setMySoc(socket);
+  }, []);
+
+  const SendToIO = async () => {
+    mySoc.emit("alert_all", chatTxt)
+  };
+
+
+  //SHIT THAT MIGHT BREAK STOPS HERE
 
   useEffect(() => {
     window.addEventListener("mousedown", handleClickOutside);
@@ -66,6 +118,7 @@ export default function Home() {
     setSearch(poke);
     setDisplay(false);
   };
+
 
   return (
     <div className="page-container">
@@ -147,6 +200,16 @@ export default function Home() {
             </div>
           ))}
       </div>
+
+
+      <div>
+            {msgs&&<ChatBox 
+            msgs={msgs}
+            chatTxt={chatTxt}
+            SendToIO={SendToIO}
+            setChatTxt={setChatTxt}
+            />}
+
       <div className="pokeball-index-bg">
         <Image
           src="/black-pokeball.svg"
@@ -154,6 +217,7 @@ export default function Home() {
           width={900}
           height={900}
         />
+
       </div>
     </div>
   );

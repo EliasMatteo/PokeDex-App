@@ -10,8 +10,9 @@ const FavHeartIcon = ({
         return (
             <div className="fav-heart">
                 <Image
-                    src={"/../public/icon/heart.svg"}
+                    src={"/icon/heart.svg"}
                     alt="favorite"
+                    fill="none"
                     width={60}
                     height={60}>
                 </Image>
@@ -23,7 +24,7 @@ const FavHeartIcon = ({
     return (
         <div className="fav-heart">
             <Image
-                src={"/../public/icon/heartfilled.svg"}
+                src={"/icon/heartfilled.svg"}
                 alt="favorite"
                 width={60}
                 height={60}>

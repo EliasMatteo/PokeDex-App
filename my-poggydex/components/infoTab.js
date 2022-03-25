@@ -1,5 +1,9 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import StatValue from './statValue';
+import { useTheme } from "../utilities/provider";
+
+
+const { setTheme } = useTheme();
 
 const InfoTab = () => (
   <Tabs>
