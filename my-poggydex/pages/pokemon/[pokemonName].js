@@ -66,6 +66,7 @@ const PokemonEntry = () => {
               </button>
             </Link>
           </div>
+
           <div className="name-img">
             <div>
               <ContextHeader
@@ -89,6 +90,19 @@ const PokemonEntry = () => {
                   <TypingBox typestyle={pokemon.type_2} type={pokemon.type_2} />
                 )}
               </div>
+
+          <div className="img-types-cont">
+            <Image
+              src={`${process.env.NEXT_PUBLIC_POKEMON_API}/pokemon/${pokemon?.name?.toLowerCase()}.png`}
+              alt={pokemon.name}
+              width={350}
+              height={350}
+            />
+            <div className="types">
+              <TypingBox type={pokemon.type_1} />
+              {/* if type 2 doesn't exist, don't show */}
+              {pokemon.type_2 == "" ? null : <TypingBox type={pokemon.type_2} />}
+
             </div>
           </div>
           <div className="heart-cont">
