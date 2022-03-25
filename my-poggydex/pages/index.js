@@ -9,6 +9,7 @@ import { useGeneration } from "../utilities/generationProvider";
 import Logo from "../components/logo";
 import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
+import Dropzone from "../components/dropZone";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -110,6 +111,9 @@ export default function Home() {
               </Link>
             </div>
           ))}
+      </div>
+      <div className="favourites">
+        <Dropzone />
       </div>
     </div>
   );
