@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTheme } from "../utilities/provider";
 import { useType } from "../utilities/typeProvider";
 import { useGeneration } from "../utilities/generationProvider";
+import Image from "next/image";
 
 // import components
 import Logo from "../components/logo";
@@ -16,6 +17,7 @@ export default function Home() {
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const { setTheme } = useTheme();
+  const { theme } = useTheme();
   const { type } = useType();
   const { generation } = useGeneration();
 
@@ -53,14 +55,14 @@ export default function Home() {
     };
   });
 
-  const handleClickOutside = event => {
+  const handleClickOutside = (event) => {
     const { current: wrap } = wrapperRef;
     if (wrap && !wrap.contains(event.target)) {
       setDisplay(false);
     }
   };
 
-  const updatePokeDex = poke => {
+  const updatePokeDex = (poke) => {
     setSearch(poke);
     setDisplay(false);
   };
@@ -74,11 +76,45 @@ export default function Home() {
           clickPokemon={() => setIsSearching(true)}
         />
         <div className="button-cont">
-          <Link href={"settings"}>
-            <button>Settings</button>
-          </Link>
           <Link href={"favourites"}>
-            <button>Favourites</button>
+            <button className="button-cont-button">
+              {theme === "dark" ? (
+                <Image
+                  src="/heart-white.svg"
+                  alt="heart icon"
+                  width={25}
+                  height={25}
+                />
+              ) : (
+                <Image
+                  src="/heart-black.svg"
+                  alt="heart icon"
+                  width={25}
+                  height={25}
+                />
+              )}
+              <div className="button-cont-button-text">Favourites</div>
+            </button>
+          </Link>
+          <Link href={"settings"}>
+            <button className="button-cont-button">
+              {theme === "dark" ? (
+                <Image
+                  src="/settings-white.svg"
+                  alt="settings icon"
+                  width={25}
+                  height={25}
+                />
+              ) : (
+                <Image
+                  src="/settings-black.svg"
+                  alt="settings icon"
+                  width={25}
+                  height={25}
+                />
+              )}
+              <div className="button-cont-button-text">Settings</div>
+            </button>
           </Link>
         </div>
       </div>
@@ -98,7 +134,7 @@ export default function Home() {
         )}
         {pokemons.length > 0 &&
           pokemons.map((pokemon) => (
-            <div key={pokemon.name}>
+            <div key={pokemon.name} className="index-pokedex-card">
               <Link href={`/pokemon/${pokemon.name}`}>
                 <a>
                   <PokedexCardCont
@@ -110,6 +146,14 @@ export default function Home() {
               </Link>
             </div>
           ))}
+      </div>
+      <div className="pokeball-index-bg">
+        <Image
+          src="/black-pokeball.svg"
+          alt="pokeball"
+          width={900}
+          height={900}
+        />
       </div>
     </div>
   );
