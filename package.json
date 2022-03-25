@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-dnd": "^15.1.1"
+  }
+}
