@@ -15,20 +15,35 @@ export default function Settings() {
         <Link href={"/"}>
           <button className="back-button">
             {theme === "dark" ? (
-              <Image
-                src={"/icon/arrow-left-white.svg"}
-                height={30}
-                width={30}
-              />
+              <div>
+                <Image
+                  src={"/icon/arrow-left-white.svg"}
+                  height={30}
+                  width={30}
+                />
+              </div>
             ) : (
-              <Image
-                src={"/icon/arrow-left-black.svg"}
-                height={30}
-                width={30}
-              />
+              <div>
+                <Image
+                  src={"/icon/arrow-left-black.svg"}
+                  height={30}
+                  width={30}
+                />
+              </div>
             )}
           </button>
         </Link>
+        <div>
+          <h1>My Favourites</h1>
+          <div className="pokeball-index-bg">
+            <Image
+              src="/black-pokeball.svg"
+              alt="pokeball"
+              width={900}
+              height={900}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

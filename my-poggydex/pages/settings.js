@@ -118,6 +118,9 @@ export default function Settings() {
             handleBoldToggle={() => setSwitchBoldState(!switchBoldState)}
           />
         </div>
+        <p className="cont-toggle">
+          Bolds text for an easier reading experience.
+        </p>
         <div className="cont-toggle">
           <h2>High Contrast</h2>
           <HighContrastToggleSwitch
@@ -127,6 +130,7 @@ export default function Settings() {
             }
           />
         </div>
+        <p className="cont-toggle">Changes text to a contrasting color</p>
 
         <div className="cont-toggle">
           <div className="pop-up-cont">
