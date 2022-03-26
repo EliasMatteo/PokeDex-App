@@ -32,7 +32,7 @@ export default function LogIn() {
 
     if (data.status === "Sign Up Sucessful") {
       router.push({
-        pathname: "/",
+        pathname: "/login",
         query: { returnUrl: router.asPath },
       });
     }
@@ -49,9 +49,19 @@ export default function LogIn() {
       </div>
 
       <div className="login-credentials">
-        <form className="login-credentials">
+        <form className="login-credentials" onSubmit={registerUser}>
+          <input
+            id="username"
+            value={username}
+            type="text"
+            onChange={(e) => setUserName(e.target.value)}
+            placeholder="Username"
+            required
+            className="login-credentials-fields"
+          />
           <input
             id="email"
+            value={email}
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
@@ -60,19 +70,37 @@ export default function LogIn() {
           />
           <input
             id="password"
+            value={password}
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
             className="login-credentials-fields"
           />
+
+          <input
+            id="passwordconfirmation"
+            value={passwordconfirmation}
+            type="password"
+            onChange={(e) => setPasswordCom(e.target.value)}
+            placeholder="Password Confirmation"
+            required
+            className="login-credentials-fields"
+          />
+
+          <input
+            type="submit"
+            value="Register"
+            className="login-credentials-buttons"
+          />
         </form>
-        <button type="submit" className="login-credentials-buttons">
-          Login
-        </button>
-        <Link href="/register" type="submit" className="login-credentials-link">
-          Don't have an account? Register here.
+        <Link href="/login" type="submit" className="login-credentials-link">
+          Have an account? Login here.
         </Link>
+      </div>
+      <div className="login-bottom-text">
+        <div>All images and data gathered is</div>
+        <div>used for educational purposes.</div>
       </div>
     </div>
   );
