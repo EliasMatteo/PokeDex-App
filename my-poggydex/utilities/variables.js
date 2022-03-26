@@ -19,6 +19,6 @@ export const themes = {
     cool: "red",
   },
   normal: {
-    cool: "blue",
+    cool: "black",
   },
 };

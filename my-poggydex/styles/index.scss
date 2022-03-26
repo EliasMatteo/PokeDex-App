@@ -1,6 +1,6 @@
 .page-container {
-  position: relative;
-  margin: 0 30px;
+  padding: 0 30px;
+  overflow: hidden;
 }
 
 .nav-bar {
@@ -18,15 +18,24 @@
 
 .button-cont {
   display: flex;
-  button {
-    font-family: Poppins;
-    font-weight: light;
+}
 
-    background: none;
-    border: none;
-    font-size: 24px;
-    margin: 5px;
-  }
+.button-cont-button {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+
+  font-family: Poppins;
+  font-weight: 500;
+
+  background: none;
+  border: none;
+  font-size: 24px;
+  margin: 5px;
+}
+
+.button-cont-button-text {
+  margin-left: 5px;
 }
 
 .empty-search-handle {
@@ -44,4 +53,49 @@
   z-index: 1;
   left: 20px;
   top: 40px;
+
+.pokeball-index-bg {
+  z-index: -1;
+  position: absolute;
+  margin: 0;
+  bottom: 300px;
+  left: 800px;
+}
+
+@media only screen and (max-width: 400px) {
+  .page-container {
+    width: 100vw;
+    margin: 0 10px;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .empty-search-handle {
+    border: 2px solid #fd6c6d;
+    border-radius: 10px;
+    padding: 0 40px 20px 40px;
+    height: 270px;
+    font-size: 12px;
+  }
+  .index-pokedex-card {
+    height: 220px;
+  }
+  .button-cont-button {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+  }
+  .button-cont-button-text {
+    display: none;
+  }
+  .pokeball-index-bg {
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    position: absolute;
+    margin: 0;
+    top: -50px;
+    left: 200px;
+  }
 }

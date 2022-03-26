@@ -37,6 +37,10 @@ export default function MyThemeProvider({ children }) {
             color: ${themes[theme].color};
             font-weight: ${themes[boldTheme].text};
           }
+          h {
+            color: ${themes[contrastTheme].cool};
+            font-weight: ${themes[boldTheme].text};
+          }
           h2 {
             color: ${themes[contrastTheme].cool};
             font-weight: ${themes[boldTheme].text};
@@ -53,6 +57,19 @@ export default function MyThemeProvider({ children }) {
             color: ${themes[theme].color};
             font-weight: ${themes[boldTheme].text};
           }
+          .react-tabs{
+            background-color: ${themes[theme].body};
+            color: ${themes[theme].color};
+            }
+          &__tab {
+              background-color: ${themes[theme].cardcolor};
+              color: ${themes[theme].color};
+          }
+          &--selected {
+            background-color: ${themes[theme].cardcolor};
+            color: ${themes[theme].color};
+        }
+
         `}
       </style>
       {children}
