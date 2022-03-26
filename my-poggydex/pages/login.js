@@ -48,9 +48,10 @@ export default function LogIn() {
       </div>
 
       <div className="login-credentials">
-        <form className="login-credentials">
+        <form className="login-credentials"> 
           <input
             id="email"
+            value={email}
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
@@ -59,6 +60,7 @@ export default function LogIn() {
           />
           <input
             id="password"
+            value={password}
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
@@ -66,7 +68,7 @@ export default function LogIn() {
             className="login-credentials-fields"
           />
         </form>
-        <button type="submit" className="login-credentials-buttons">
+        <button type="submit" value="Login" className="login-credentials-buttons">
           Login
         </button>
         <Link href="/register" type="submit" className="login-credentials-link">
