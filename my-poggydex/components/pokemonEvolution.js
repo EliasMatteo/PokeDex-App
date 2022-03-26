@@ -7,7 +7,9 @@ const PokemonEvolution = ({ pokemonname = "henry", arrowDisplay = null }) => {
       <div className="evolution-image-cont">
         <div className="evolution-image-icon">
           <Image
-            src={`/pokemon/${pokemonname}.png`}
+            src={`${
+              process.env.NEXT_PUBLIC_POKEMON_API
+            }/pokemon/${pokemonname?.toLowerCase()}.png`}
             width={164}
             height={164}
             alt={pokemonname}
