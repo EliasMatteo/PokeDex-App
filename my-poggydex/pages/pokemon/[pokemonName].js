@@ -76,7 +76,7 @@ const PokemonEntry = () => {
             </div>
             <div className="img-types-cont">
               <Image
-                src={`${process.env.NEXT_PUBLIC_POKEMON_API}/pokemon/${pokemon.name}.png`}
+                src={`${process.env.NEXT_PUBLIC_POKEMON_API}/pokemon/${pokemon.name.toLowerCase()}.png`}
                 alt={pokemon.name}
                 width={350}
                 height={350}
