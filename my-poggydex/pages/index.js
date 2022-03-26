@@ -14,7 +14,6 @@ import SearchBar from "../components/searchBar";
 import PokedexCardCont from "../components/pokedexCardCont";
 import ChatBox from "../components/chatBox";
 
-
 export default function Home() {
   const [name, setName] = useState("");
   const [pokemons, setPokemons] = useState([]);
@@ -24,7 +23,6 @@ export default function Home() {
   const { theme } = useTheme();
   const { type } = useType();
   const { generation } = useGeneration();
-
 
   const [test, setTest] = useState([]);
   const [username, setUsername] = useState([]);
@@ -54,17 +52,15 @@ export default function Home() {
         setIsSearching(false);
       }
     };
-  
 
     getPokemons();
 
     if (isSearching) return () => (cancelSetPokemons = true);
   }, [isSearching, setIsSearching, name]);
 
-
   //SHIT MIGHT BREAK
 
-  useEffect(()=>{
+  useEffect(() => {
     // const socket = io("ws://example.com/my-namespace", {
     //   reconnectionDelayMax: 10000,
     //   auth: {
@@ -81,22 +77,18 @@ export default function Home() {
     //   setUsers(users);
     // })
 
-    socket.on("change", (id, txt)=>{
+    socket.on("change", (id, txt) => {
       // alert(`${id} has connected`)
-      setMsgs((prev)=>[
-        ...prev,
-        `${id}: ${txt}`
-     ])
-     console.log(socket)
+      setMsgs((prev) => [...prev, `${id}: ${txt}`]);
+      console.log(socket);
     });
 
     setMySoc(socket);
   }, []);
 
   const SendToIO = async () => {
-    mySoc.emit("alert_all", chatTxt)
+    mySoc.emit("alert_all", chatTxt);
   };
-
 
   //SHIT THAT MIGHT BREAK STOPS HERE
 
@@ -118,7 +110,6 @@ export default function Home() {
     setSearch(poke);
     setDisplay(false);
   };
-
 
   return (
     <div className="page-container">
@@ -201,14 +192,16 @@ export default function Home() {
           ))}
       </div>
 
-
       <div>
-            {msgs&&<ChatBox 
+        {msgs && (
+          <ChatBox
             msgs={msgs}
             chatTxt={chatTxt}
             SendToIO={SendToIO}
             setChatTxt={setChatTxt}
-            />}
+          />
+        )}
+      </div>
 
       <div className="pokeball-index-bg">
         <Image
@@ -217,7 +210,6 @@ export default function Home() {
           width={900}
           height={900}
         />
-
       </div>
     </div>
   );

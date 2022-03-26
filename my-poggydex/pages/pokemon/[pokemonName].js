@@ -25,7 +25,6 @@ const PokemonEntry = () => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(false);
 
-
   // match the pokemon to dynamic prop pokemonName using search api
   useEffect(() => {
     setLoading(true);
@@ -57,16 +56,15 @@ const PokemonEntry = () => {
           <div className="button-cont">
             <Link href={"/"}>
               <button>
-                <Image 
-                src={"/icon/back.svg"}
-                height={40}
-                width={50}
-                fill="#FFFFFF"
+                <Image
+                  src={"/icon/back.svg"}
+                  height={40}
+                  width={50}
+                  fill="#FFFFFF"
                 ></Image>
               </button>
             </Link>
           </div>
-
           <div className="name-img">
             <div>
               <ContextHeader
@@ -90,10 +88,13 @@ const PokemonEntry = () => {
                   <TypingBox typestyle={pokemon.type_2} type={pokemon.type_2} />
                 )}
               </div>
-
+            </div>
+          </div>
           <div className="img-types-cont">
             <Image
-              src={`${process.env.NEXT_PUBLIC_POKEMON_API}/pokemon/${pokemon?.name?.toLowerCase()}.png`}
+              src={`${
+                process.env.NEXT_PUBLIC_POKEMON_API
+              }/pokemon/${pokemon?.name?.toLowerCase()}.png`}
               alt={pokemon.name}
               width={350}
               height={350}
@@ -101,8 +102,9 @@ const PokemonEntry = () => {
             <div className="types">
               <TypingBox type={pokemon.type_1} />
               {/* if type 2 doesn't exist, don't show */}
-              {pokemon.type_2 == "" ? null : <TypingBox type={pokemon.type_2} />}
-
+              {pokemon.type_2 == "" ? null : (
+                <TypingBox type={pokemon.type_2} />
+              )}
             </div>
           </div>
           <div className="heart-cont">
