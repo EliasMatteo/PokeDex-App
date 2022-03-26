@@ -17,6 +17,7 @@ export default function Settings() {
   const [switchBoldState, setSwitchBoldState] = useState(false);
   const [switchContrastState, setSwitchContrastState] = useState(false);
   const { setTheme } = useTheme();
+  const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenType, setIsOpenType] = useState(false);
 
@@ -84,10 +85,21 @@ export default function Settings() {
       <div className="test-cont">
         <div className="button-cont">
           <Link href={"/"}>
-            <Image src="/arrow-left.png" alt="back" width={40} height={20} />
-          </Link>
-          <Link href={"/"}>
-            <button>back to home</button>
+            <button className="back-button">
+              {theme === "dark" ? (
+                <Image
+                  src={"/icon/arrow-left-white.svg"}
+                  height={30}
+                  width={30}
+                />
+              ) : (
+                <Image
+                  src={"/icon/arrow-left-black.svg"}
+                  height={30}
+                  width={30}
+                />
+              )}
+            </button>
           </Link>
         </div>
         <div className="cont-toggle">
@@ -141,6 +153,11 @@ export default function Settings() {
         </div>
 
         <div className="cont-toggle">
+          <h2>Selected Types:</h2>
+          <span>{JSON.stringify(type)}</span>
+        </div>
+
+        <div className="cont-toggle">
           <div className="pop-up-cont">
             <button
               className="filter-toggle"
@@ -163,6 +180,11 @@ export default function Settings() {
               </div>
             )}
           </div>
+        </div>
+
+        <div className="cont-toggle">
+          <h2>Selected Generations:</h2>
+          <p>{JSON.stringify(generation)}</p>
         </div>
       </div>
 
