@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useDrag, useDrop } from 'react-dnd';
 
 // import component
 import TypingBox from "./typingBox";
