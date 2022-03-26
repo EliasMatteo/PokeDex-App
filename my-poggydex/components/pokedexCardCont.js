@@ -4,7 +4,12 @@ import { useDrag, useDrop } from 'react-dnd';
 // import component
 import TypingBox from "./typingBox";
 
-const PokedexCardCont = ({ pokemonname, type1, type2 }) => {
+const PokedexCardCont = ({ 
+  pokemonname,
+  type1,
+  type2, 
+  children = null 
+}) => {
   return (
     <div className="pokedex-card-container">
       <div className={`pokedex-card-cont-${type1}`}>
