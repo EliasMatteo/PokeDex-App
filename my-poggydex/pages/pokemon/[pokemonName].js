@@ -76,7 +76,9 @@ const PokemonEntry = () => {
             </div>
             <div className="img-types-cont">
               <Image
-                src={`${process.env.NEXT_PUBLIC_POKEMON_API}/pokemon/${pokemon.name.toLowerCase()}.png`}
+                src={`${
+                  process.env.NEXT_PUBLIC_POKEMON_API
+                }/pokemon/${pokemon?.name?.toLowerCase()}.png`}
                 alt={pokemon.name}
                 width={350}
                 height={350}
@@ -90,27 +92,9 @@ const PokemonEntry = () => {
               </div>
             </div>
           </div>
-          <div className="img-types-cont">
-            <Image
-              src={`${
-                process.env.NEXT_PUBLIC_POKEMON_API
-              }/pokemon/${pokemon?.name?.toLowerCase()}.png`}
-              alt={pokemon.name}
-              width={350}
-              height={350}
-            />
-            <div className="types">
-              <TypingBox type={pokemon.type_1} />
-              {/* if type 2 doesn't exist, don't show */}
-              {pokemon.type_2 == "" ? null : (
-                <TypingBox type={pokemon.type_2} />
-              )}
-            </div>
-          </div>
           <div className="heart-cont">
             <FavHeartIcon />
           </div>
-
           {/* <Image src="/pokeball.png" alt="pokeball" width={180} height={180} /> */}
         </div>
         <div className="sec2">
