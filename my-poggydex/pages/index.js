@@ -5,6 +5,11 @@ import { useTheme } from "../utilities/provider";
 import { useType } from "../utilities/typeProvider";
 import { useGeneration } from "../utilities/generationProvider";
 
+//dnd
+import { TouchBackend } from "react-dnd-touch-backend";
+//import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from "react-dnd";
+
 // import components
 import Logo from "../components/logo";
 import SearchBar from "../components/searchBar";
@@ -54,14 +59,14 @@ export default function Home() {
     };
   });
 
-  const handleClickOutside = event => {
+  const handleClickOutside = (event) => {
     const { current: wrap } = wrapperRef;
     if (wrap && !wrap.contains(event.target)) {
       setDisplay(false);
     }
   };
 
-  const updatePokeDex = poke => {
+  const updatePokeDex = (poke) => {
     setSearch(poke);
     setDisplay(false);
   };
@@ -112,9 +117,7 @@ export default function Home() {
             </div>
           ))}
       </div>
-      <div className="favourites">
-        <Dropzone />
-      </div>
+      <div className="favourites"></div>
     </div>
   );
 }
