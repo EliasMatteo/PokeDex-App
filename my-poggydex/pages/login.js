@@ -24,7 +24,7 @@ export default function LogIn() {
     const data = await response.json();
     console.log(data);
 
-    if (data.status === "Sign Up Sucessful") {
+    if (data.status === "") {
       router.push({
         pathname: "/",
         query: { returnUrl: router.asPath },

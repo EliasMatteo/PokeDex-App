@@ -8,6 +8,11 @@ import Image from "next/image";
 
 import { io } from "socket.io-client";
 
+//dnd
+// import { TouchBackend } from "react-dnd-touch-backend";
+// //import { HTML5Backend } from 'react-dnd-html5-backend'
+// import { DndProvider } from "react-dnd";
+
 // import components
 import Logo from "../components/logo";
 import SearchBar from "../components/searchBar";

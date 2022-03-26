@@ -33,6 +33,11 @@ export default function MyThemeProvider({ children }) {
             background-color: ${themes[theme].body};
             color: ${themes[theme].color};
           }
+          div {
+            color: ${themes[theme].color};
+            color: ${themes[contrastTheme].cool};
+            font-weight: ${themes[boldTheme].text};
+          }
           button {
             color: ${themes[theme].color};
             font-weight: ${themes[boldTheme].text};
@@ -41,35 +46,52 @@ export default function MyThemeProvider({ children }) {
             color: ${themes[contrastTheme].cool};
             font-weight: ${themes[boldTheme].text};
           }
+
+          h3 {
+            color: ${themes[theme].color};
+            color: ${themes[contrastTheme].cool};
+            font-weight: ${themes[boldTheme].text};
+          }
           h2 {
+            color: ${themes[theme].color};
             color: ${themes[contrastTheme].cool};
             font-weight: ${themes[boldTheme].text};
           }
           p {
             color: ${themes[theme].color};
+            color: ${themes[contrastTheme].cool};
+            font-weight: ${themes[boldTheme].text};
+          }
+          li {
+            color: ${themes[theme].color};
+            color: ${themes[contrastTheme].cool};
             font-weight: ${themes[boldTheme].text};
           }
           h1 {
             color: ${themes[theme].color};
+            color: ${themes[contrastTheme].cool};
             font-weight: ${themes[boldTheme].text};
           }
           span {
             color: ${themes[theme].color};
+            color: ${themes[contrastTheme].cool};
             font-weight: ${themes[boldTheme].text};
           }
-          .react-tabs{
+          .react-tabs {
             background-color: ${themes[theme].body};
+            color: ${themes[contrastTheme].cool};
             color: ${themes[theme].color};
-            }
+          }
           &__tab {
-              background-color: ${themes[theme].cardcolor};
-              color: ${themes[theme].color};
+            background-color: ${themes[theme].cardcolor};
+            color: ${themes[contrastTheme].cool};
+            color: ${themes[theme].color};
           }
           &--selected {
+            color: ${themes[contrastTheme].cool};
             background-color: ${themes[theme].cardcolor};
             color: ${themes[theme].color};
-        }
-
+          }
         `}
       </style>
       {children}

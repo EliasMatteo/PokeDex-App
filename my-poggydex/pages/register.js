@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function LogIn() {
   const [credentials, setCredentials] = useState("login");
-  const [username, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [passwordconfirmation, setPasswordCom] = useState("");
@@ -13,18 +13,21 @@ export default function LogIn() {
 
   async function registerUser(event) {
     event.preventDefault();
-    const response = await fetch("http://localhost:5000/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/JSON",
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-        passwordconfirmation,
-      }),
-    });
+    const response = await fetch(
+      "https://sleepy-reaches-25469.herokuapp.com/signup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/JSON",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          password: password,
+          password_confirmation: passwordconfirmation,
+        }),
+      }
+    );
 
     const data = await response.json();
     console.log(data);
@@ -51,9 +54,9 @@ export default function LogIn() {
         <form className="login-credentials" onSubmit={registerUser}>
           <input
             id="username"
-            value={username}
+            value={name}
             type="text"
-            onChange={(e) => setUserName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Username"
             required
             className="login-credentials-fields"

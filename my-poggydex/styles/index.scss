@@ -48,6 +48,12 @@
   color: #fd6c6d;
 }
 
+.favourties {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  top: 40px;
+
 .pokeball-index-bg {
   z-index: -1;
   position: absolute;
@@ -92,4 +98,5 @@
     top: -50px;
     left: 200px;
   }
+}
 }
