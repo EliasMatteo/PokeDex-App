@@ -4,25 +4,20 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function LogIn() {
-  const [credentials, setCredentials] = useState("login");
-  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [passwordconfirmation, setPasswordCom] = useState("");
   const router = useRouter();
 
-  async function registerUser(event) {
+  async function loginUser(event) {
     event.preventDefault();
-    const response = await fetch("http://localhost:5000/signup", {
+    const response = await fetch("http://localhost:5000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/JSON",
       },
       body: JSON.stringify({
-        username,
         email,
         password,
-        passwordconfirmation,
       }),
     });
 
@@ -48,7 +43,7 @@ export default function LogIn() {
       </div>
 
       <div className="login-credentials">
-        <form className="login-credentials"> 
+        <form className="login-credentials" onSubmit={loginUser}>
           <input
             id="email"
             value={email}
@@ -68,9 +63,13 @@ export default function LogIn() {
             className="login-credentials-fields"
           />
         </form>
-        <button type="submit" value="Login" className="login-credentials-buttons">
-          Login
-        </button>
+        <input
+        type="submit" 
+        value="Login" 
+        className="login-credentials-buttons"
+        />
+
+        
         <Link href="/register" type="submit" className="login-credentials-link">
           Don't have an account? Register here.
         </Link>
