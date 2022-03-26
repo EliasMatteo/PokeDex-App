@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useState } from "react";
-import { useDrag, useDrop } from "react-dnd";
 
 // import component
 import TypingBox from "./typingBox";
