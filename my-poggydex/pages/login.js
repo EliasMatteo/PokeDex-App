@@ -5,31 +5,27 @@ import Link from "next/link";
 
 export default function LogIn() {
   const [credentials, setCredentials] = useState("login");
-  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [passwordconfirmation, setPasswordCom] = useState("");
   const router = useRouter();
 
-  async function registerUser(event) {
+  async function signinUser(event) {
     event.preventDefault();
-    const response = await fetch("http://localhost:5000/signup", {
+    const response = await fetch("http://localhost:5000/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/JSON",
       },
       body: JSON.stringify({
-        username,
-        email,
-        password,
-        passwordconfirmation,
+        email: email,
+        password: password,
       }),
     });
 
     const data = await response.json();
     console.log(data);
 
-    if (data.status === "Sign Up Sucessful") {
+    if (data.status === "") {
       router.push({
         pathname: "/",
         query: { returnUrl: router.asPath },
