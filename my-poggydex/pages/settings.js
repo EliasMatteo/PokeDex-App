@@ -73,6 +73,7 @@ export default function Settings() {
 
     if (isInOldGenerations) {
       newGeneration = newGeneration.filter((g) => g !== pokemonGeneration);
+      handleGenerationClick;
     } else {
       newGeneration.push(pokemonGeneration);
     }
